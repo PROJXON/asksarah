@@ -23,7 +23,23 @@ if [[ -z "${IMAGE_URI}" || "${IMAGE_URI}" == "null" ]]; then
   exit 1
 fi
 
-REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document | jq -r '.region')
+TOKEN=$(curl -s -X PUT "http://169.254.169.254/latest/api/token" \
+  -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" || true)
+if [[ -n "${TOKEN}" ]]; then
+  REGION=$(curl -s -H "X-aws-ec2-metadata-token: ${TOKEN}" \
+    http://169.254.169.254/latest/dynamic/instance-identity/document \
+    | jq -r '.region')
+else
+  REGION=$(curl -s http://169.254.169.254/latest/dynamic/instance-identity/document \
+    | jq -r '.region')
+fi
+
+REGION=${AWS_DEFAULT_REGION:-${AWS_REGION:-$REGION}}
+
+if [[ -z "${REGION}" || "${REGION}" == "null" ]]; then
+  echo "Unable to determine AWS region."
+  exit 1
+fi
 
 echo "Logging in to ECR in region ${REGION}..."
 aws ecr get-login-password --region "${REGION}" | docker login --username AWS --password-stdin "$(echo "${IMAGE_URI}" | cut -d'/' -f1)"
