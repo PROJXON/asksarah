@@ -1,0 +1,33 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_REPO_NAME: asksarah-web
+
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
+      - REPOSITORY_URI=$ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME
+      - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
+      - IMAGE_TAG=${CODEBUILD_RESOLVED_SOURCE_VERSION:0:7}
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:$IMAGE_TAG .
+  post_build:
+    commands:
+      - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - printf '{"ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > deploy/imageDetail.json
+      - chmod +x deploy/scripts/*.sh
+artifacts:
+  files:
+    - appspec.yml
+    - deploy/**/*
+  discard-paths: no
+
