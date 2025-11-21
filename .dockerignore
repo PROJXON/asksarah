@@ -1,0 +1,12 @@
+.git
+.github
+.next
+.turbo
+node_modules
+npm-debug.log
+Dockerfile*
+README.md
+infra
+*.log
+.env
+

@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/asksarah
+hooks:
+  ApplicationStop:
+    - location: deploy/scripts/stop_container.sh
+      timeout: 120
+      runas: root
+  AfterInstall:
+    - location: deploy/scripts/start_container.sh
+      timeout: 300
+      runas: root
+
