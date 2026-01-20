@@ -1,56 +1,93 @@
-'use client';
+"use client"
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { useState } from "react"
+import Link from "next/link"
+import { Menu, X, Phone } from "lucide-react"
 
 const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Featured', href: '/#listings' },
-  { label: 'Experience', href: '/#experience' },
-  { label: 'Listings', href: '/listings' },
-  { label: 'Reviews', href: '/reviews' },
-];
+  { href: "#about", label: "About" },
+  { href: "#listings", label: "Properties" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#contact", label: "Contact" },
+]
 
-export function SiteHeader() {
-  const pathname = usePathname();
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:px-8">
-        <Link
-          href="/"
-          className="text-sm font-semibold uppercase tracking-[0.4em] text-slate-200"
-        >
-          Ask Sarah Conner
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+      {/* Top bar with phone */}
+      <div className="bg-primary text-primary-foreground py-2">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between text-sm">
+          <span className="hidden sm:block tracking-wide">Serving Malibu, LA & Palm Desert</span>
+          <a
+            href="tel:+3108717600"
+            className="flex items-center gap-2 font-medium hover:opacity-80 transition-opacity mx-auto sm:mx-0"
+          >
+            <Phone className="h-4 w-4" />
+            <span>Call Today: (310)871-7600</span>
+          </a>
+        </div>
+      </div>
 
-        <nav className="hidden items-center gap-6 text-sm text-slate-300 md:flex">
-          {navLinks.map((link) => {
-            const isSameRoute =
-              !link.href.includes('#') && pathname === link.href;
+      <nav className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <span className="text-2xl font-semibold tracking-tight text-foreground">Ask Sarah Conner</span>
+          </Link>
 
-            return (
+          {/* Desktop navigation */}
+          <div className="hidden md:flex md:items-center md:gap-8">
+            {navLinks.map((link) => (
               <Link
-                key={link.label}
+                key={link.href}
                 href={link.href}
-                className={`transition-colors hover:text-white ${
-                  isSameRoute ? 'text-white' : ''
-                }`}
+                className="text-sm font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
-            );
-          })}
-        </nav>
+            ))}
+            <a
+              href="tel:+3108717600"
+              className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium tracking-widest uppercase hover:bg-primary/90 transition-colors flex items-center gap-2"
+            >
+              <Phone className="h-4 w-4" />
+              Call Now
+            </a>
+          </div>
 
-        <a
-          className="rounded-full border border-white/25 px-4 py-2 text-sm font-medium text-white transition hover:border-white hover:bg-white/10"
-          href="tel:+13108717600"
-        >
-          310.871.7600
-        </a>
-      </div>
+          {/* Mobile menu button */}
+          <button className="md:hidden p-2" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-6 border-t border-border">
+            <div className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="tel:+13105551234"
+                className="bg-primary text-primary-foreground px-6 py-4 text-sm font-medium tracking-widest uppercase text-center hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <Phone className="h-4 w-4" />
+                Call Now: (310) 871-7600
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
     </header>
-  );
+  )
 }
-
