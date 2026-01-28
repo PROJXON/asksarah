@@ -1,6 +1,10 @@
 
 import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
+import AboutSection from "@/components/about-section"; 
+import ReviewSection from "@/components/testimonial-section";
+import PropertiesSection from "@/components/properties-section";
+
 
 // import { ListingCard } from "@/components/listing-card";
 // import { featuredListings } from "@/lib/listings";
@@ -9,7 +13,12 @@ import { HeroSection } from "@/components/hero-section";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
+
       <HeroSection />
+      <AboutSection />
+      <PropertiesSection />
+      <ReviewSection />
+      
     </main>
   )
 }

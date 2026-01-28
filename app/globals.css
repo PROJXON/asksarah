@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
-
+/* @import "tw-animate-css"; */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -12,7 +12,7 @@
   --card-foreground: oklch(0.25 0.02 50);
   --popover: oklch(0.99 0.005 80);
   --popover-foreground: oklch(0.25 0.02 50);
-  --primary: oklch(0.35 0.06 60); /* Warm terracotta brown */
+  --primary: #121c23; /* rgb(18,28,35) */
   --primary-foreground: oklch(0.98 0.005 80);
   --secondary: oklch(0.94 0.015 75); /* Soft sand */
   --secondary-foreground: oklch(0.3 0.03 50);

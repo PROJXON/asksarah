@@ -1,21 +1,38 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#listings", label: "Properties" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about-section", label: "About" },
+  { href: "#listings-section", label: "Properties" },
+  { href: "#testimonial-section", label: "Testimonials" },
+  { href: "/contact", label: "Contact" },
 ]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Add scroll event listener
+  useEffect(()=> {
+    const handleScroll = () =>{
+      setScrolled(window.scrollY > 50)
+    }
+    //will run on mount
+    handleScroll();
+    //removes the event listener 
+    window.addEventListener("scroll", handleScroll)
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
+
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+    //add scrolled class when scrolled to header 
+    <header className={`fixed top-0 left-0 right-0 z-50 ${scrolled ? "bg-background/90" : "bg-transparent"}`}>
       {/* Top bar with phone */}
       <div className="bg-primary text-primary-foreground py-2">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 flex items-center justify-between text-sm">
