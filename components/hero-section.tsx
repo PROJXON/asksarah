@@ -1,74 +1,115 @@
-import { Phone, ArrowRight } from "lucide-react"
+"use client"
+import { Phone, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image";
+import { useState, useEffect} from "react"
+
+const heroSlides =[
+  {
+    image: "/Malibu-Oceanfront.jpeg",
+    tagline: "Malibu Oceanfront"
+  },
+  {
+    image: "/Pacific-Palisades.jpeg",
+    tagline: "Pacific Palisades",
+  },
+  {
+    image: "/Beverly-Hills.jpeg",
+    tagline: "Beverly Hills",
+  }
+];
+
 
 export function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+  }, 5000)
+  return () => clearInterval(timer)
+  }, [])
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+
+
   return (
-    <section className="relative min-h-screen flex items-center pt-32">
-      <div className="absolute inset-0 z-0">
-        <img src="/asc-background.webp" alt="Luxury Malibu estate" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-foreground/40" />
-      </div>
+  <section className="relative h-screen">
+     {heroSlides.map((slide, index) => (
+    <div
+      key={index}
+      className={`absolute inset-0 transition-opacity duration-1000 ${
+      index === currentSlide ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Image
+      src={slide.image || "/placeholder.svg"}
+      alt={slide.tagline}
+      className="w-full h-full object-cover filter brightness-75"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/70" />
+    </div>
+    ))}
+    {/* Navigation Arrows */}
+    <button
+    onClick={prevSlide}
+    className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors rounded-full"
+    aria-label="Previous slide"
+    >
+    <ChevronLeft className="h-6 w-6 text-white" />
+    </button>
+    <button
+    onClick={nextSlide}
+    className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors rounded-full"
+    aria-label="Next slide"
+    >
+    <ChevronRight className="h-6 w-6 text-white" />
+    </button>
+     <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+    <p className="text-base md:text-lg tracking-[0.3em] uppercase text-white/80 mb-4 font-light">
+      {heroSlides[currentSlide].tagline}
+    </p>
+    
+    <h1 className="text-7xl md:text-9xl lg:text-[7rem] font-serif font-light text-white tracking-tight">
+      Sarah Conner
+    </h1>
+    
+    <p className="mt-6 text-base md:text-lg tracking-[0.15em] uppercase text-white/70 font-medium">
+      Malibu & Los Angeles Luxury Real Estate
+    </p>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-24">
-        <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm font-medium tracking-wide text-primary-foreground">
-              Available for Consultations
-            </span>
-          </div>
-          <p className="text-sm font-medium tracking-[0.3em] uppercase text-primary-foreground/80 mb-6">
-            The Agency Beverly Hills • LA, Malibu & The Desert
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-primary-foreground leading-[0.95] tracking-tight text-balance">
-            Exquisite Properties, Unmatched Luxury.
-          </h1>
-          <p className="mt-8 text-lg md:text-xl text-primary-foreground/90 font-light leading-relaxed max-w-xl">
-            Navigate the luxury market with clarity, confidence, and purpose. From coastal estates to desert retreats, I'll help unlock your property's full potential.
-          </p>
-          
-          {/* Primary CTA - Phone */}
-          <div className="mt-12 flex flex-col gap-4">
-            <a
-              href="tel:+13105551234"
-              className="bg-primary-foreground text-foreground px-8 py-5 text-base font-medium tracking-widest uppercase hover:bg-primary-foreground/90 transition-all hover:scale-[1.02] flex items-center justify-center gap-3 sm:w-fit"
-            >
-              <Phone className="h-5 w-5" />
-              Call Now: (310) 555-1234
-            </a>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#listings"
-                className="border-2 border-primary-foreground text-primary-foreground px-8 py-4 text-sm font-medium tracking-widest uppercase hover:bg-primary-foreground/10 transition-colors text-center flex items-center justify-center gap-2"
-              >
-                View Properties
-                <ArrowRight className="h-4 w-4" />
-              </a>
-              <a
-                href="#contact"
-                className="border-2 border-primary-foreground/50 text-primary-foreground px-8 py-4 text-sm font-medium tracking-widest uppercase hover:bg-primary-foreground/10 hover:border-primary-foreground transition-colors text-center"
-              >
-                Send a Message
-              </a>
-            </div>
-          </div>
+    {/* CTAs */}
+    <div className="mt-12 flex flex-col sm:flex-row items-center gap-4">
+      <a
+      href="tel:+13105551234"
+      className="bg-white text-slate-800 px-8 py-4 text-base md:text-lg font-medium tracking-wider uppercase hover:bg-white/90 transition-all flex items-center gap-3 rounded-sm"
+      >
+      <Phone className="h-5 w-5" />
+      (310) 555-1234
+      </a>
+      <a
+      href="#listings"
+      className="border border-white/60 text-white px-8 py-4 text-base md:text-lg font-medium tracking-wider uppercase hover:bg-white/10 hover:border-white transition-colors rounded-sm"
+      >
+      View Properties
+      </a>
+    </div>
 
-          {/* Trust indicators */}
-          <div className="mt-12 pt-8 border-t border-primary-foreground/20 flex flex-wrap gap-8 text-primary-foreground/80 text-sm">
-            <div>
-              <span className="text-2xl font-medium text-primary-foreground">MBA</span>
-              <p>Pepperdine University</p>
-            </div>
-            <div>
-              <span className="text-2xl font-medium text-primary-foreground">The Agency</span>
-              <p>Beverly Hills</p>
-            </div>
-            <div>
-              <span className="text-2xl font-medium text-primary-foreground">2 Markets</span>
-              <p>Coast & Desert</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    {/* Slide Indicators */}
+    <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
+      {heroSlides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrentSlide(index)}
+        className={`w-12 h-0.5 transition-colors rounded-full ${
+        index === currentSlide ? "bg-white" : "bg-white/30"
+        }`}
+        aria-label={`Go to slide ${index + 1}`}
+      />
+      ))}
+    </div>
+    </div>
+
+  </section>
   )
 }

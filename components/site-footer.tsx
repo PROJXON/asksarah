@@ -1,89 +1,73 @@
+
 import Link from "next/link"
-import { Phone } from "lucide-react"
+import { Phone, Mail } from "lucide-react"
 
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Final CTA */}
-        <div className="text-center pb-12 mb-12 border-b border-primary-foreground/20">
-          <h3 className="text-2xl md:text-3xl font-light">Ready to Make Your Move?</h3>
-          <p className="mt-4 text-primary-foreground/80">One call could change everything.</p>
-          <a
-            href="tel:+310871-7600"
-            className="mt-6 inline-flex items-center gap-3 bg-primary-foreground text-foreground px-8 py-4 text-sm font-medium tracking-widest uppercase hover:bg-primary-foreground/90 transition-colors"
-          >
-            <Phone className="h-5 w-5" />
-            (310) 871-7600
-          </a>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-12">
-          <div>
-            <h3 className="text-2xl font-semibold tracking-tight">Sarah Conner</h3>
-            <p className="mt-4 text-primary-foreground/80 text-sm leading-relaxed">
-              Luxury Real Estate
-              <br />
-              The Agency, Beverly Hills
+        <div className="grid md:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <h3 className="text-3xl font-serif font-light tracking-tight">Sarah Conner</h3>
+            <p className="mt-2 text-primary-foreground/60 text-sm">The Agency Beverly Hills</p>
+            <p className="mt-6 text-primary-foreground/80 leading-relaxed max-w-md">
+              Strategic guidance, creative vision, and personalized service for 
+              buyers and sellers across Malibu, Pacific Palisades, Beverly Hills, and Los Angeles.
             </p>
-            <p className="mt-2 text-primary-foreground/60 text-sm">LA • Malibu • The Desert</p>
+          
           </div>
 
+          {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-medium tracking-widest uppercase mb-6">Quick Links</h4>
+            <h4 className="text-sm font-medium tracking-wider uppercase mb-6">Navigate</h4>
             <nav className="space-y-3">
-              <Link
-                href="#about"
-                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-              >
+              <Link href="#about" className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
                 About
               </Link>
-              <Link
-                href="#listings"
-                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-              >
-                Properties
+              <Link href="#listings" className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
+                Portfolio
               </Link>
-              <Link
-                href="#testimonials"
-                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-              >
+              <Link href="#testimonials" className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
                 Testimonials
               </Link>
-              <Link
-                href="#contact"
-                className="block text-primary-foreground/80 hover:text-primary-foreground transition-colors text-sm"
-              >
-                Contact
+              <Link href="#contact" className="block text-primary-foreground/70 hover:text-primary-foreground transition-colors text-sm">
+                Connect
               </Link>
             </nav>
           </div>
 
+          {/* Contact */}
           <div>
-            <h4 className="text-sm font-medium tracking-widest uppercase mb-6">Office</h4>
-            <address className="not-italic text-primary-foreground/80 text-sm leading-relaxed">
-              The Agency Beverly Hills
-              <br />
-              9465 Wilshire Blvd
-              <br />
-             Beverly Hills, CA 90212
-              <br />
-              <br />
-              <a href="tel:+3108717600" className="hover:text-primary-foreground transition-colors">
+            <h4 className="text-sm font-medium tracking-wider uppercase mb-6">Contact</h4>
+            <div className="space-y-3 text-sm">
+              <a href="tel:+3108717600" className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Phone className="h-4 w-4" />
                 (310) 871-7600
               </a>
-              <br />
-              <a href="mailto:sarahsunshineconner@icloud.com" className="hover:text-primary-foreground transition-colors">
+              <a href="mailto:sarah@theagencyre.com" className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors">
+                <Mail className="h-4 w-4" />
                 sarahsunshineconner@icloud.com
               </a>
+            </div>
+            <address className="not-italic text-primary-foreground/60 text-sm mt-6 leading-relaxed">
+              9465 Wilshire Blvd<br />
+              Beverly Hills, CA 90212
             </address>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-primary-foreground/20">
-          <p className="text-center text-primary-foreground/60 text-sm">
-            © {new Date().getFullYear()} Ask Sarah Conner. All rights reserved.
+        <div className="mt-16 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-primary-foreground/50 text-sm">
+            © {new Date().getFullYear()} Sarah Conner | The Agency. All rights reserved.
           </p>
+          <a
+            href="tel:+3108717600"
+            className="flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors text-sm"
+          >
+            <Phone className="h-4 w-4" />
+            Ready to connect? Call now
+          </a>
         </div>
       </div>
     </footer>
