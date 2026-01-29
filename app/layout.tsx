@@ -1,18 +1,22 @@
+
+import React from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-import "./globals.css";
+import { Cormorant_Garamond, Inter } from "next/font/google"
+import { Header } from "@/components/site-header";
+import { Footer } from "@/components/site-footer";
+import "./globals.css"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-});
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-cormorant",
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
-});
+  variable: "--font-inter",
+})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://asksarahconner.com"),
@@ -52,14 +56,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-slate-950 font-sans text-slate-50 antialiased`}
-      >
+      <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
         <div className="relative flex min-h-screen flex-col bg-gradient-to-br from-black via-slate-950 to-slate-900">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(251,146,60,0.08),_transparent_55%)]" />
-          <SiteHeader />
-          <main className="relative flex-1">{children}</main>
-          <SiteFooter />
+          {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_45%),radial-gradient(circle_at_bottom,_rgba(251,146,60,0.08),_transparent_55%)]" />
+          <main className="relative flex-1">{children}</main> */}
+          <Header />
+          {children}
+          <Footer />
         </div>
       </body>
     </html>
