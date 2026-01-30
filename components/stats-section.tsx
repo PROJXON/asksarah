@@ -35,7 +35,7 @@ export function StatsSection() {
             className="group relative aspect-[4/3] overflow-hidden rounded-lg"
           >
             <Image
-              src="/Buying.jpeg"
+              src="/Buying.webp"
               alt="Buy a home"
               width={400}
               height={300}
@@ -52,7 +52,7 @@ export function StatsSection() {
             className="group relative aspect-[4/3] overflow-hidden rounded-lg"
           >
             <Image
-              src="/Selling.jpeg"
+              src="/Selling.webp"
               alt="Sell your home"
               width={400}
               height={300}
@@ -69,7 +69,7 @@ export function StatsSection() {
             className="group relative aspect-[4/3] overflow-hidden rounded-lg"
           >
             <Image
-              src="/Investing.jpeg"
+              src="/Investing.webp"
               alt="Invest in real estate"
               width={400}
               height={300}

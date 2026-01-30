@@ -5,6 +5,7 @@ import Image from "next/image"
 import type React from "react"
 import { Mail, Phone, MapPin, CheckCircle2 } from "lucide-react"
 
+
 export default function ContactForm(){
 
     const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ export default function ContactForm(){
 
     return(
        <section id="contact" className="py-20 lg:py-24 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 text-lg">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
           <p className="text-sm tracking-[0.2em] uppercase text-accent mb-4 font-medium">
             Get in Touch
@@ -127,7 +128,7 @@ export default function ContactForm(){
           <div>
             <div className="mb-12">
               <Image
-                src="/professional-elegant-real-estate-agent-woman.jpeg"
+                src="/Sarah-Port.webp"
                 alt="Sarah Conner"
                 width={128}
                 height={128}

@@ -3,7 +3,6 @@
 import { useState, useEffect} from "react"
 import Link from "next/link"
 import { Menu, X, Phone } from "lucide-react"
-import Image from "next/image"  
 
 const navLinks = [
   { href: "#about-section", label: "About" },
@@ -36,12 +35,22 @@ export function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90" : "bg-transparent"}`}>
       <nav className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
-          <Image 
-            src="/ASC-transparent-logo.png"
-            alt="Ask Sarah Conner"
-            width={240}
-            height={80}
-          />
+         <Link href="/" className="flex flex-col">
+            <span
+              className={`text-xl font-serif font-medium tracking-wide transition-colors ${
+                scrolled ? "text-foreground" : "text-white"
+              }`}
+            >
+              Sarah Conner
+            </span>
+            <span
+              className={`text-xs tracking-widest uppercase transition-colors ${
+                scrolled ? "text-muted-foreground" : "text-white/70"
+              }`}
+            >
+              The Agency
+            </span>
+          </Link>          
           {/* Desktop navigation */}
           <div className="hidden md:flex md:items-center md:gap-8">
             {navLinks.map((link) => (

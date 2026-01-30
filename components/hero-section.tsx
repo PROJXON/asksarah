@@ -5,15 +5,15 @@ import { useState, useEffect} from "react"
 
 const heroSlides =[
   {
-    image: "/Malibu-Oceanfront.jpeg",
+    image: "/Malibu-Oceanfront.webp",
     tagline: "Malibu Oceanfront"
   },
   {
-    image: "/Pacific-Palisades.jpeg",
+    image: "/Pacific-Palisades.webp",
     tagline: "Pacific Palisades",
   },
   {
-    image: "/Beverly-Hills.jpeg",
+    image: "/Beverly-Hills.webp",
     tagline: "Beverly Hills",
   }
 ];
@@ -43,8 +43,10 @@ export function HeroSection() {
       }`}
     >
       <Image
-      src={slide.image || "/placeholder.svg"}
+      src={slide.image}
       alt={slide.tagline}
+      width={1920}
+      height={1080}
       className="w-full h-full object-cover filter brightness-75"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/70" />
@@ -88,7 +90,7 @@ export function HeroSection() {
       (310) 555-1234
       </a>
       <a
-      href="#listings"
+      href="#listings-section"
       className="border border-white/60 text-white px-8 py-4 text-base md:text-lg font-medium tracking-wider uppercase hover:bg-white/10 hover:border-white transition-colors rounded-sm"
       >
       View Properties
