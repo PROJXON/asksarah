@@ -10,7 +10,7 @@ export default function AboutSection(){
           <div className="relative">
             <div className="aspect-[3/4] overflow-hidden rounded-lg">
               <Image
-                src="/professional-elegant-real-estate-agent-woman.jpeg"
+                src="/Sarah-Conner.webp"
                 alt="Sarah Conner - Luxury Real Estate Agent"
                 width={600}
                 height={800}

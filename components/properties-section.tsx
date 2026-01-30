@@ -25,7 +25,7 @@ const listings: Listing[] = [
     beds: 5,
     baths: 6,
     sqft: "6,200",
-    image: "/Malibu-Oceanfront.jpeg",
+    image: "/Malibu-Oceanfront.webp",
     status: "Represented",
   },
   {
@@ -36,7 +36,7 @@ const listings: Listing[] = [
     beds: 4,
     baths: 5,
     sqft: "5,100",
-    image: "/Pacific-Palisades.jpeg",
+    image: "/Pacific-Palisades.webp",
     status: "In Escrow",
   },
   {
@@ -47,7 +47,7 @@ const listings: Listing[] = [
     beds: 6,
     baths: 8,
     sqft: "8,500",
-    image: "/Carbon-Beach.jpeg",
+    image: "/Carbon-Beach.webp",
     status: "Just Sold",
   },
 ]
@@ -134,7 +134,7 @@ export function PropertiesSection() {
                 <div className="flex items-center gap-4 mt-4 pt-4 border-t border-border text-sm text-muted-foreground">
                   <span>{listing.beds} Beds</span>
                   <span>{listing.baths} Baths</span>
-                  <span>{listing.sqft} SF</span>
+                  <span>{listing.sqft} SQFT </span>
                 </div>
               </div>
             </article>
