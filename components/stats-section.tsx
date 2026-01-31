@@ -2,9 +2,9 @@ import { Phone } from "lucide-react"
 import Image from "next/image"
 
 const stats = [
-  { value: "MBA", label: "Pepperdine University" },
-  { value: "15+", label: "Years Experience" },
-  { value: "The Agency", label: "Beverly Hills" },
+  { value: "License", label: "#02272182" },
+  { value: "30+", label: "Years Experience" },
+  { value: "The Agency RE", label: "Beverly Hills" },
 ]
 
 export function StatsSection() {
@@ -16,7 +16,7 @@ export function StatsSection() {
             Built on Experience & Results
           </h2>
           <p className="mt-4 text-base text-muted-foreground">
-            Strategic guidance for Malibu and Los Angeles luxury real estate.
+            Strategic guidance for Malibu and Los Angeles, The Cochella Valley luxury real estate.
           </p>
         </div>
 

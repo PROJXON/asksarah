@@ -8,7 +8,7 @@ const navLinks = [
   { href: "#about-section", label: "About" },
   { href: "#listings-section", label: "Properties" },
   { href: "#testimonial-section", label: "Testimonials" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "Ask" },
 ]
 
 export function Header() {
@@ -41,14 +41,14 @@ export function Header() {
                 scrolled ? "text-foreground" : "text-white"
               }`}
             >
-              Sarah Conner
+              Ask Sarah Conner
             </span>
             <span
               className={`text-xs tracking-widest uppercase transition-colors ${
                 scrolled ? "text-muted-foreground" : "text-white/70"
               }`}
             >
-              The Agency
+              {/* The Agency */}
             </span>
           </Link>          
           {/* Desktop navigation */}
