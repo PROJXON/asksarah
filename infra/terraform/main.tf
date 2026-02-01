@@ -145,10 +145,10 @@ resource "aws_lb" "app" {
 }
 
 resource "aws_lb_target_group" "app" {
-  name     = "${local.name}-tg"
-  port     = var.app_port
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.main.id
+  name        = "${local.name}-tg"
+  port        = var.app_port
+  protocol    = "HTTP"
+  vpc_id      = aws_vpc.main.id
   target_type = "instance"
 
   health_check {
@@ -230,14 +230,6 @@ resource "aws_iam_instance_profile" "ec2" {
   role = aws_iam_role.ec2.name
 }
 
-block_device_mappings {
-    device_name = "/dev/xvda"
-    ebs {
-      volume_size           = 16
-      volume_type           = "gp3"
-      delete
-    }}
-
 ## Compute
 resource "aws_launch_template" "app" {
   name_prefix   = "${local.name}-lt-"
@@ -254,7 +246,7 @@ resource "aws_launch_template" "app" {
 
   tag_specifications {
     resource_type = "instance"
-    tags = merge(local.tags, { Name = "${local.name}-app" })
+    tags          = merge(local.tags, { Name = "${local.name}-app" })
   }
 
   lifecycle {
