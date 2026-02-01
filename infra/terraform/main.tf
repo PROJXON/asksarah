@@ -252,6 +252,15 @@ resource "aws_launch_template" "app" {
   lifecycle {
     create_before_destroy = true
   }
+
+  block_device_mappings {
+    device_name = "/dev/xvda"
+    ebs {
+      volume_size           = 16
+      volume_type           = "gp3"
+      delete_on_termination = true
+    }
+  }
 }
 
 resource "aws_autoscaling_group" "app" {
