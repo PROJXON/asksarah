@@ -230,6 +230,14 @@ resource "aws_iam_instance_profile" "ec2" {
   role = aws_iam_role.ec2.name
 }
 
+block_device_mappings {
+    device_name = "/dev/xvda"
+    ebs {
+      volume_size           = 16
+      volume_type           = "gp3"
+      delete
+    }}
+
 ## Compute
 resource "aws_launch_template" "app" {
   name_prefix   = "${local.name}-lt-"
