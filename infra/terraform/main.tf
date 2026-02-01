@@ -230,13 +230,6 @@ resource "aws_iam_instance_profile" "ec2" {
   role = aws_iam_role.ec2.name
 }
 
-block_device_mappings {
-    device_name = "/dev/xvda"
-    ebs {
-      volume_size           = 16
-      volume_type           = "gp3"
-      delete
-    }}
 
 ## Compute
 resource "aws_launch_template" "app" {
@@ -259,6 +252,14 @@ resource "aws_launch_template" "app" {
 
   lifecycle {
     create_before_destroy = true
+  } 
+  
+  block_device_mappings {
+  device_name = "/dev/xvda"
+  ebs {
+    volume_size           = 16
+    volume_type           = "gp3"
+    delete_on_termination = true
   }
 
   block_device_mappings {
@@ -269,6 +270,8 @@ resource "aws_launch_template" "app" {
       delete_on_termination = true
     }
   }
+}
+
 }
 
 resource "aws_autoscaling_group" "app" {
