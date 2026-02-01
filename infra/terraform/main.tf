@@ -251,7 +251,7 @@ resource "aws_launch_template" "app" {
 
   lifecycle {
     create_before_destroy = true
-  }
+  } 
 
   block_device_mappings {
     device_name = "/dev/xvda"
@@ -261,6 +261,8 @@ resource "aws_launch_template" "app" {
       delete_on_termination = true
     }
   }
+}
+
 }
 
 resource "aws_autoscaling_group" "app" {
