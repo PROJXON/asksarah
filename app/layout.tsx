@@ -2,8 +2,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google"
-import { Header } from "@/components/site-header";
-import { Footer } from "@/components/site-footer";
+import Header from "@/components/sections/site-header";
+import { Footer } from "@/components/sections/site-footer";
 import "./globals.css"
 
 const cormorant = Cormorant_Garamond({
