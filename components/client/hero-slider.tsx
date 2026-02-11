@@ -1,85 +1,153 @@
 "use client"
 
-import Image from "next/image"
+import React from "react"
+
+import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useEffect, useState } from "react"
 
-type Slide = { image: string; tagline: string }
+const heroSlides = [
+  {
+    image: "/BeachSunset.webp",
+    tagline: "Malibu Coast",
+  },
+  {
+    image: "/DesertPoolside.webp",
+    tagline: "Desert Living",
+  },
+ 
+]
 
-export default function HeroSliderClient({ slides }: { slides: Slide[] }) {
+const locations = [
+  "Malibu",
+  "Beverly Hills",
+  "Hollywood Hills",
+  "Palm Springs",
+  "Palm Desert",
+  "Rancho Mirage",
+  "La Quinta",
+]
+
+interface HeroSliderProps {
+  children: React.ReactNode
+}
+
+export function HeroSlider({ children }: HeroSliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentLocation, setCurrentLocation] = useState(0)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+      setCurrentLocation((prev) => (prev + 1) % locations.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [slides.length])
+  }, [])
 
-  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
-  const prevSlide = () =>
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+    setCurrentLocation((prev) => (prev + 1) % locations.length)
+  }
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+    setCurrentLocation((prev) => (prev - 1 + locations.length) % locations.length)
+  }
 
   return (
-    <>
-      {/* Slides */}
-      {slides.map((slide, index) => (
+    <section className="relative h-screen " >
+      {/* Image Slider */}
+      {heroSlides.map((slide, index) => (
         <div
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
-          <Image
-            src={slide.image}
+          <img
+            src={slide.image || "/placeholder.svg"}
             alt={slide.tagline}
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className="object-cover filter brightness-75"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/60 to-slate-900/70" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/50 to-slate-900/60" />
         </div>
       ))}
-
-      {/* Tagline (dynamic) */}
-      <p className="absolute top-24 left-1/2 -translate-x-1/2 z-20 text-base md:text-lg tracking-[0.3em] uppercase text-white/80 mb-4 font-light text-center px-6">
-        {slides[currentSlide].tagline}
-      </p>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors rounded-full"
         aria-label="Previous slide"
-        type="button"
       >
         <ChevronLeft className="h-6 w-6 text-white" />
       </button>
-
       <button
         onClick={nextSlide}
         className="absolute right-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors rounded-full"
         aria-label="Next slide"
-        type="button"
       >
         <ChevronRight className="h-6 w-6 text-white" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-12 h-0.5 transition-colors rounded-full ${
-              index === currentSlide ? "bg-white" : "bg-white/30"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-            type="button"
-          />
-        ))}
+      {/* Center Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white tracking-tight">
+         Ask Sarah Conner
+        </h1>
+
+        <p className="mt-6 text-base md:text-lg tracking-[0.15em] uppercase text-white/70 font-medium">
+         From Malibu’s Coastal Charm to the Serenity of the Desert
+        </p>
+
+        {/* Animated Location List */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:gap-x-3 max-w-2xl">
+          {locations.map((location, index) => (
+            <span
+              key={location}
+              className="inline-flex flex-col items-center w-max"
+            >
+              <span
+          className={`text-sm md:text-base tracking-wide transition-all duration-500 ${
+            index === currentLocation
+              ? "text-white font-medium scale-110"
+              : "text-white/40"
+          }`}
+              >
+          {location}
+          {index < locations.length - 1 && (
+            <span className="ml-2 md:ml-3 text-white/30">·</span>
+          )}
+              </span>
+
+              {/* Red underline */}
+              <span
+          className={`block mt-2 h-0.5 bg-red-500 rounded-full w-full origin-left transform transition-transform duration-500 ${
+            index === currentLocation ? "scale-x-100" : "scale-x-0"
+          }`}
+          aria-hidden="true"
+              />
+            </span>
+          ))}
+        </div>
+
+
+        {children}
+
+        {/* Slide Indicators */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                setCurrentSlide(index)
+                setCurrentLocation(index % locations.length)
+              }}
+              className={`w-12 h-0.5 transition-colors rounded-full ${
+                index === currentSlide ? "bg-white" : "bg-white/30"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   )
 }
