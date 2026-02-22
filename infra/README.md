@@ -77,4 +77,3 @@ After `terraform apply`, note:
 - `ecr_repository_url` – repository to inspect pushed images
 
 Feel free to extend this stack with Route 53 records, ACM certificates, or autoscaling policies as next steps.
-

@@ -1,63 +1,73 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import Link from "next/link"
-import { Menu, X, Phone } from "lucide-react"
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Menu, X, Phone } from "lucide-react";
+import { usePathname } from "next/navigation";
 
-type NavLink = { href: string; label: string }
+type NavLink = { href: string; label: string };
 
-export default function HeaderInteractions({ navLinks }: { navLinks: NavLink[] }) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+export default function HeaderInteractions({
+  navLinks,
+}: {
+  navLinks: NavLink[];
+}) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // On non-home pages, treat the header as always "scrolled"
+  const isHomePage = pathname === "/";
+  const isDark = !scrolled && isHomePage;
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    handleScroll()
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  // Apply scrolled styles to the SERVER header + its server-rendered children
+  // Apply styles to the SERVER-rendered header + its children
   useEffect(() => {
-    const header = document.getElementById("site-header")
-    if (!header) return
+    const header = document.getElementById("site-header");
+    if (!header) return;
 
     // Header background
-    header.classList.toggle("bg-background/90", scrolled)
-    header.classList.toggle("backdrop-blur", scrolled)
-    header.classList.toggle("bg-transparent", !scrolled)
+    header.classList.toggle("bg-background/90", !isDark);
+    header.classList.toggle("backdrop-blur", !isDark);
+    header.classList.toggle("bg-transparent", isDark);
 
     // Brand colors
-    const title = header.querySelector('[data-brand="title"]')
-    const subtitle = header.querySelector('[data-brand="subtitle"]')
-    title?.classList.toggle("text-foreground", scrolled)
-    title?.classList.toggle("text-white", !scrolled)
-    subtitle?.classList.toggle("text-muted-foreground", scrolled)
-    subtitle?.classList.toggle("text-white/70", !scrolled)
+    const title = header.querySelector('[data-brand="title"]');
+    const subtitle = header.querySelector('[data-brand="subtitle"]');
+    title?.classList.toggle("text-foreground", !isDark);
+    title?.classList.toggle("text-white", isDark);
+    subtitle?.classList.toggle("text-muted-foreground", !isDark);
+    subtitle?.classList.toggle("text-white/70", isDark);
 
-    // Desktop links colors
+    // Desktop link colors
     header.querySelectorAll("[data-navlink]").forEach((el) => {
-      el.classList.toggle("text-muted-foreground", scrolled)
-      el.classList.toggle("hover:text-foreground", scrolled)
-      el.classList.toggle("text-white/80", !scrolled)
-      el.classList.toggle("hover:text-white", !scrolled)
-    })
+      el.classList.toggle("text-muted-foreground", !isDark);
+      el.classList.toggle("hover:text-foreground", !isDark);
+      el.classList.toggle("text-white/80", isDark);
+      el.classList.toggle("hover:text-white", isDark);
+    });
 
     // Call button styles
-    const call = header.querySelector("[data-call]")
+    const call = header.querySelector("[data-call]");
     if (call) {
-      call.classList.toggle("bg-primary", scrolled)
-      call.classList.toggle("text-primary-foreground", scrolled)
-      call.classList.toggle("hover:bg-primary/90", scrolled)
+      call.classList.toggle("bg-primary", !isDark);
+      call.classList.toggle("text-primary-foreground", !isDark);
+      call.classList.toggle("hover:bg-primary/90", !isDark);
 
-      call.classList.toggle("bg-white/10", !scrolled)
-      call.classList.toggle("backdrop-blur-sm", !scrolled)
-      call.classList.toggle("text-white", !scrolled)
-      call.classList.toggle("hover:bg-white/20", !scrolled)
-      call.classList.toggle("border", !scrolled)
-      call.classList.toggle("border-white/30", !scrolled)
+      call.classList.toggle("bg-white/10", isDark);
+      call.classList.toggle("backdrop-blur-sm", isDark);
+      call.classList.toggle("text-white", isDark);
+      call.classList.toggle("hover:bg-white/20", isDark);
+      call.classList.toggle("border", isDark);
+      call.classList.toggle("border-white/30", isDark);
     }
-  }, [scrolled])
+  }, [isDark]);
 
   return (
     <div className="md:hidden">
@@ -68,9 +78,13 @@ export default function HeaderInteractions({ navLinks }: { navLinks: NavLink[] }
         type="button"
       >
         {mobileMenuOpen ? (
-          <X className={`h-6 w-6 ${scrolled ? "text-foreground" : "text-white"}`} />
+          <X
+            className={`h-6 w-6 ${isDark ? "text-white" : "text-foreground"}`}
+          />
         ) : (
-          <Menu className={`h-6 w-6 ${scrolled ? "text-foreground" : "text-white"}`} />
+          <Menu
+            className={`h-6 w-6 ${isDark ? "text-white" : "text-foreground"}`}
+          />
         )}
       </button>
 
@@ -89,16 +103,16 @@ export default function HeaderInteractions({ navLinks }: { navLinks: NavLink[] }
             ))}
 
             <a
-              href="tel:+13105551234"
+              href="tel:+13108715600"
               className="bg-primary text-primary-foreground px-6 py-4 text-sm tracking-widest uppercase text-center hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               <Phone className="h-4 w-4" />
-              (310) 555-1234
+              (310) 871-7600
             </a>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }
