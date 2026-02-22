@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import type React from "react"
-import { CheckCircle2 } from "lucide-react"
+import { useState } from "react";
+import type React from "react";
+import { CheckCircle2 } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -11,23 +11,46 @@ export default function ContactForm() {
     phone: "",
     interest: "",
     message: "",
-  })
+  });
 
-  const [submitted, setSubmitted] = useState(false)
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
-    setFormData({ name: "", email: "", phone: "", interest: "", message: "" })
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setSubmitted(true);
+  //   setTimeout(() => setSubmitted(false), 3000);
+  //   setFormData({ name: "", email: "", phone: "", interest: "", message: "" });
+  // };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const payload = { ...formData };
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    alert(data?.error || "Something went wrong");
+    return;
   }
+  
+  setSubmitted(true);
+  alert("Sent!");
+};
+
 
   return (
     <div className="bg-secondary/30 p-8 md:p-10 rounded-lg">
-      <h3 className="text-2xl font-serif font-light text-foreground mb-2">
+      <h3 className="text-3xl font-serif font-light text-foreground mb-2">
         Send a Message
       </h3>
-      <p className="text-sm text-muted-foreground mb-8">
+      <p className=" text-muted-foreground mb-8">
         Fill out the form and I&apos;ll be in touch within 24 hours.
       </p>
 
@@ -90,8 +113,8 @@ export default function ContactForm() {
               className="w-full px-4 py-3 bg-background border border-border focus:border-accent focus:outline-none transition-colors text-muted-foreground rounded-sm"
             >
               <option value="">Interested in...</option>
-              <option value="buying">Buying in Malibu/LA</option>
-              <option value="selling">Selling my property</option>
+              <option value="buying">Buying </option>
+              <option value="selling">Selling </option>
               <option value="both">Selling & Buying</option>
               <option value="investing">Investment opportunities</option>
               <option value="consultation">General consultation</option>
@@ -119,5 +142,5 @@ export default function ContactForm() {
         </form>
       )}
     </div>
-  )
+  );
 }

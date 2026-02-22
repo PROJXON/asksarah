@@ -1,6 +1,13 @@
-import Image from "next/image"
-import { Mail, Phone, MapPin } from "lucide-react"
-import ContactFormClient from "@/components/client/contact-form"
+import Image from "next/image";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
+import ContactFormClient from "@/components/client/contact-form";
 
 export default function ContactSection() {
   return (
@@ -14,8 +21,9 @@ export default function ContactSection() {
             Let&apos;s Connect
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Whether you&apos;re buying, selling, or exploring possibilities in Malibu
-            or Los Angeles, I&apos;m here to help make your real estate goals a reality.
+            Whether you&apos;re buying, selling, or exploring possibilities in
+            southern California I&apos;m here to help make your real estate
+            goals a reality.
           </p>
         </div>
 
@@ -31,12 +39,53 @@ export default function ContactSection() {
                 alt="Sarah Conner"
                 width={128}
                 height={128}
-                className="w-32 h-32 object-cover rounded-full mx-auto lg:mx-0"
+                className="w-32 h-32 object-cover mx-auto lg:mx-0"
               />
             </div>
 
-            <h3 className="text-xl font-medium text-foreground mb-2">Sarah Conner</h3>
-            <p className="text-muted-foreground mb-8">Real Estate Advisor | The Agency</p>
+            <div className="mt-8 flex items-center gap-4">
+              <h3 className="text-2xl font-medium text-foreground mb-2">
+                Sarah Conner
+              </h3>
+              <span
+                aria-hidden="true"
+                className="w-px h-6 bg-muted-foreground/60"
+              />
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://www.facebook.com/sarahbethconner/"
+                  aria-label="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-accent transition-colors"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/sarah-beth-rena-conner-22776620/"
+                  aria-label="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-accent transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/asksarahconner/"
+                  aria-label="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-foreground hover:text-accent transition-colors"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+            <p className="text-muted-foreground mb-8">
+              Real Estate Advisor | The Agency
+            </p>
 
             <div className="space-y-6">
               <a
@@ -57,13 +106,38 @@ export default function ContactSection() {
 
               <div className="flex items-start gap-4 text-muted-foreground">
                 <MapPin className="h-5 w-5 mt-1" />
-                <address className="not-italic">
-                  The Agency Beverly Hills<br />
-                  9465 Wilshire Blvd<br />
-                  Beverly Hills, CA 90212
-                </address>
+                <div className="not-italic">
+                  <div className="mb-4 flex items-center justify-center lg:justify-start gap-3">
+                    {/* <Image
+                      src="/Agencylogo.webp"
+                      alt="The Agency logo"
+                      width={56}
+                      height={20}
+                      className="object-contain w-14 h-auto"
+                      /> */}
+                    <h4 className=" uppercase tracking-[0.2em] text-accent font-medium">
+                      the agency
+                    </h4>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <address className="not-italic sm:pr-4">
+                      331 Foothill Rd #100
+                      <br />
+                      Beverly Hills, CA 90210
+                    </address>
+
+                    <address className="not-italic sm:border-l sm:border-muted-foreground/40 sm:pl-4">
+                      73-545 El Paseo #2504
+                      <br />
+                      Palm Desert, CA 92260
+                    </address>
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Social icons */}
 
             <div className="mt-12 p-6 bg-secondary">
               <p className="text-foreground mb-4">Prefer to talk?</p>
@@ -79,5 +153,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

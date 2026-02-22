@@ -1,23 +1,25 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight, Star } from "lucide-react"
-import type { Testimonial } from "@/components/sections/testimonial-section"
+import { useRef } from "react";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import type { Testimonial } from "@/components/sections/testimonial-section";
 
 interface TestimonialsCarouselProps {
-  testimonials: Testimonial[]
+  testimonials: Testimonial[];
 }
 
-export default function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps) {
-  const scrollRef = useRef<HTMLDivElement>(null)
+export default function TestimonialsCarousel({
+  testimonials,
+}: TestimonialsCarouselProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
     scrollRef.current?.scrollBy({
       left: direction === "left" ? -400 : 400,
       behavior: "smooth",
-    })
-  }
+    });
+  };
 
   return (
     <>
@@ -65,18 +67,24 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
 
             {/* Author Info */}
             <div className="flex items-center gap-4">
-              <Image
-                src={testimonial.headshot}
-                alt={testimonial.author}
-                width={56}
-                height={56}
-                className="rounded-full object-cover"
-              />
-              <p className="font-medium text-foreground">— {testimonial.author}</p>
+              {testimonial.headshot ? (
+                <Image
+                  src={testimonial.headshot}
+                  alt={testimonial.author}
+                  width={56}
+                  height={56}
+                  className="rounded-full object-cover"
+                />
+              ) : (
+                <div className="w-14 h-14 rounded-full" aria-hidden="true" />
+              )}
+              <p className="font-medium text-foreground">
+                — {testimonial.author}
+              </p>
             </div>
           </div>
         ))}
       </div>
     </>
-  )
+  );
 }

@@ -6,37 +6,38 @@
 /* Luxury Red & Charcoal Theme - Refined & Professional */
 :root {
   --background: oklch(0.98 0.004 60); /* Warm off-white */
-  --foreground: oklch(0.20 0.015 30); /* Deep charcoal with warm undertone */
+  --foreground: oklch(0.2 0.015 30); /* Deep charcoal with warm undertone */
   --card: oklch(0.99 0.003 60); /* Clean warm white */
-  --card-foreground: oklch(0.20 0.015 30);
+  --card-foreground: oklch(0.2 0.015 30);
   --popover: oklch(0.99 0.003 60);
-  --popover-foreground: oklch(0.20 0.015 30);
-  --primary: oklch(0.40 0.14 25); /* Deep burgundy wine red */
+  --popover-foreground: oklch(0.2 0.015 30);
+  --primary: rgb(237, 34, 39);
+  --primary-rgb: rgb(237, 34, 39);
   --primary-foreground: oklch(0.98 0.004 60);
   --secondary: oklch(0.95 0.008 55); /* Warm stone */
   --secondary-foreground: oklch(0.22 0.015 30);
   --muted: oklch(0.93 0.006 50); /* Soft warm gray */
-  --muted-foreground: oklch(0.50 0.015 40);
-  --accent: oklch(0.45 0.12 25); /* Rich muted red accent */
+  --muted-foreground: oklch(0.5 0.015 40);
+  --accent: rgb(237, 34, 39);
   --accent-foreground: oklch(0.98 0.004 60);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.90 0.008 50);
+  --destructive: rgb(237, 34, 39);
+  --destructive-foreground: rgb(237, 34, 39);
+  --border: oklch(0.9 0.008 50);
   --input: oklch(0.96 0.005 55);
   --ring: oklch(0.45 0.12 25);
   --chart-1: oklch(0.45 0.12 25);
-  --chart-2: oklch(0.55 0.10 30);
+  --chart-2: oklch(0.55 0.1 30);
   --chart-3: oklch(0.35 0.08 20);
-  --chart-4: oklch(0.60 0.06 50);
-  --chart-5: oklch(0.50 0.04 40);
+  --chart-4: oklch(0.6 0.06 50);
+  --chart-5: oklch(0.5 0.04 40);
   --radius: 0.5rem;
   --sidebar: oklch(0.98 0.004 60);
-  --sidebar-foreground: oklch(0.20 0.015 30);
-  --sidebar-primary: oklch(0.40 0.14 25);
+  --sidebar-foreground: oklch(0.2 0.015 30);
+  --sidebar-primary: rgb(237, 34, 39);
   --sidebar-primary-foreground: oklch(0.98 0.004 60);
   --sidebar-accent: oklch(0.95 0.008 55);
   --sidebar-accent-foreground: oklch(0.22 0.015 30);
-  --sidebar-border: oklch(0.90 0.008 50);
+  --sidebar-border: oklch(0.9 0.008 50);
   --sidebar-ring: oklch(0.45 0.12 25);
 }
 
@@ -61,7 +62,7 @@
   --input: oklch(0.22 0.01 30);
   --ring: oklch(0.55 0.14 25);
   --chart-1: oklch(0.55 0.14 25);
-  --chart-2: oklch(0.60 0.10 30);
+  --chart-2: oklch(0.6 0.1 30);
   --chart-3: oklch(0.45 0.08 20);
   --chart-4: oklch(0.65 0.06 50);
   --chart-5: oklch(0.55 0.04 40);
@@ -76,9 +77,14 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  /* --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
   --font-gentium: "Gentium Book Plus", "Gentium Basic", "Georgia", serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback"; */
+  --font-sans: "Lato", "Lato Fallback", system-ui, sans-serif;
+  --font-serif:
+    "Playfair Display", "Playfair Display Fallback", "Georgia", serif;
+  --font-mono: "Montserrat", "Montserrat Fallback", system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -124,6 +130,10 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+/* Montserrat utility - for nav, buttons, labels */
+.font-heading {
+  font-family: var(--font-montserrat), "Montserrat", system-ui, sans-serif;
 }
 
 /* Hide scrollbar for horizontal scroll */

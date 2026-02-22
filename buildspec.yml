@@ -28,4 +28,3 @@ artifacts:
     - appspec.yml
     - deploy/**/*
   discard-paths: no
-
