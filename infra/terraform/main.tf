@@ -263,7 +263,7 @@ resource "aws_launch_template" "app" {
   }
 }
 
-}
+
 
 resource "aws_autoscaling_group" "app" {
   name                = "${local.name}-asg"
