@@ -7,6 +7,14 @@ terraform {
       version = "~> 5.62"
     }
   }
+
+  backend "s3" {
+    bucket         = "asksarah-terraform-state"
+    key            = "prod/infra.tfstate"
+    region         = "us-west-2"
+    dynamodb_table = "asksarah-terraform-locks"
+    encrypt        = true
+  }
 }
 
 provider "aws" {
