@@ -259,7 +259,8 @@ resource "aws_launch_template" "app" {
 
   lifecycle {
     create_before_destroy = true
-  } 
+    ignore_changes        = [user_data]
+  }
 
   block_device_mappings {
     device_name = "/dev/xvda"
