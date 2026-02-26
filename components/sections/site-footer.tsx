@@ -149,32 +149,31 @@ export function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-primary-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-6">
+            <p className="text-primary-foreground/50">
+              Copyright © {new Date().getFullYear()} Ask Sarah Conner. All rights reserved.
+            </p>
+            <a
+              href="https://www.projxon.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-foreground/50 hover:underline"
+              title="Projxon — external link"
+              aria-label="Projxon website (opens in a new tab)"
+            >
+              Powered by <span className="text-white">PROJXON</span>
+            </a>
+          </div>
+
+          <div>
             <Image
               src="/ASC-transparent-logo.png"
               alt="Ask Sarah Conner logo"
               width={120}
               height={34}
-              className="h-25 w-auto "
+              className="h-auto w-auto"
             />
-            <p className="text-primary-foreground/50 flex items-center gap-3">
-              <span>
-                Copyright © {new Date().getFullYear()} Ask Sarah Conner. All
-                rights reserved.
-              </span>
-              <span aria-hidden className="opacity-60">
-                •
-              </span>
-              <span>Powered by Projxon</span>
-            </p>
           </div>
-          <a
-            href="tel:+3108717600"
-            className="flex items-center gap-2 text-primary-foreground hover:text-primary-foreground/80 transition-colors "
-          >
-            <Phone className="h-4 w-4" />
-            Ready to connect? Call now
-          </a>
         </div>
       </div>
     </footer>
