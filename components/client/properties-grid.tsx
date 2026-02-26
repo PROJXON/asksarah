@@ -17,10 +17,6 @@ export default function PropertiesGrid({ listings }: PropertiesGridProps) {
     <div className="grid md:grid-cols-3 gap-8">
       {listings.map((listing) => {
         const isHovered = hoveredId === listing.id;
-        // const ImageWrapper = listing.href ? Link : "div";
-        // const wrapperProps = listing.href
-        //   ? { href: listing.href, target: "_blank", rel: "noopener noreferrer" }
-        //   : {};
 
         return (
           <article

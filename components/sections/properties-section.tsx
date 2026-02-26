@@ -11,7 +11,6 @@ export type Listing = {
   sqft: string;
   image?: string;
   status: "Represented" | "In Escrow" | "Sold" | "Portfolio";
-  href?: string; // Optional external link for the listing
 };
 
 const listings: Listing[] = [
@@ -23,11 +22,10 @@ const listings: Listing[] = [
     beds: 4,
     baths: 5,
     sqft: "4,602",
-    image: "/70461 Boothill RD, RANCHO MIRAGE, CA 92270.jpg",
+    image: "/BootHill-Estate.webp",
     status: "Represented",
     description:
       "Rare classic California jewel home. Thunderbird Heights on double lot. Rare one of a kind estate home once owned by iconic Hollywood producer. Monthly and seasonal rentals. One of the most beautiful homes in one of the best neighborhoods!",
-    // href: "https://www.theagencyre.com/single-family/clr/25631759/70461-boothill-rd-rancho-mirage-ca-92270"
   } as Listing,
   {
     id: 2,
@@ -37,7 +35,7 @@ const listings: Listing[] = [
     beds: 5,
     baths: 5,
     sqft: "5,997",
-    image: "/6 Rocky Ln, RANCHO MIRAGE, CA 92270.jpg",
+    image: "/RockyLn.webp",
     status: "Represented",
     description:
       "Rancho Mirage's exclusive enclave of just 24 custom homes, this striking contemporary estate offers over 6,000 square feet of refined luxury. Dramatic floor-to-ceiling glass, soaring ceilings, and open-concept design create seamless indoor-outdoor flow. The grand primary suite includes an office, dual spa-like baths, and two oversized walk-in closets. Additional guest suites are privately set throughout the home. A gourmet kitchen features state-of-the-art appliances, eat-in dining, and dual catering ovens.The resort-style pool, lush landscaping, mature fruit trees, and west-facing mountain views define desert elegance. The home also includes a three-car garage with golf cart space, and owned solar panels. Option to purchase fully furnished. A rare opportunity to own a private architectural masterpiece in one of Rancho Mirage's most sought-after communities. Close proximity to the airport, Palm Springs and Palm Desert. Shown by private appointment only.",
@@ -51,7 +49,7 @@ const listings: Listing[] = [
     beds: 5,
     baths: 5,
     sqft: "4,283",
-    image: "/39525 Kersten Rd, RANCHO MIRAGE, CA 92270.jpg",
+    image: "/KrestenRd.webp",
     status: "Sold",
     description:
       "Welcome to Rancho Encanto. This estate property offers unparalleled tranquility nestled in a private quiet neighborhood between the Springs and Thunderbird Country Clubs. Set on almost acre, the property showcases sweeping South and West panoramic mountain views all framed by meticulously landscaped gardens and a sparkling pool. This Santa Barbara-style estate has stunning 5-bedrooms and 5-bathrooms in the main residence and a detached 1-bedroom, 1-bath Casita that is perfect for guests, multi generational relatives, a home gym or office. The home has an open floor plan and an abundance of natural light throughout the interior. The living room is charming yet casually elegant with a fireplace and open beam ceilings. Entertain in the spacious kitchen and family room that has a disappearing 12' door that makes for seamless indoor /outdoor living. The Kitchen has been carefully appointed with a suite of stainless steel appliances from high-end manufacturers like Viking and Sub Zero, custom cabinets and a generous island with counter seating. The secluded primary suite features mountain views, vaulted ceilings, a fireplace, dual bathroom vanities, a walk-in closet and direct access to the backyard /pool area. The grounds feature an awe-inspiring pool and raised spa that seats 10, a beautiful covered outdoor pavilion with its own fireplace for entertainingand an al fresco dining. This immaculate estate combines the utmost privacy and convenience within a stunning natural setting and is located moments from charming boutiques, restaurants and renowned hiking trails. There is so much to see and a surprise everywhere you look. You really do need to come and view this unique property.",
