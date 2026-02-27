@@ -97,11 +97,11 @@ export default function ContactSection() {
               </a>
 
               <a
-                href="mailto:sarahsunshineconner@icloud.com"
+                href="mailto:sarah@asksarahconner.com"
                 className="flex items-center gap-4 text-foreground hover:text-accent transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>sarahsunshineconner@icloud.com</span>
+                <span>sarah@asksarahconner.com</span>
               </a>
 
               <div className="flex items-start gap-4 text-muted-foreground">

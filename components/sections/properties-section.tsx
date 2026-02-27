@@ -53,6 +53,17 @@ const listings: Listing[] = [
     description:
       "Welcome to Rancho Encanto. This estate property offers unparalleled tranquility nestled in a private quiet neighborhood between the Springs and Thunderbird Country Clubs. Set on almost acre, the property showcases sweeping South and West panoramic mountain views all framed by meticulously landscaped gardens and a sparkling pool. This Santa Barbara-style estate has stunning 5-bedrooms and 5-bathrooms in the main residence and a detached 1-bedroom, 1-bath Casita that is perfect for guests, multi generational relatives, a home gym or office. The home has an open floor plan and an abundance of natural light throughout the interior. The living room is charming yet casually elegant with a fireplace and open beam ceilings. Entertain in the spacious kitchen and family room that has a disappearing 12' door that makes for seamless indoor /outdoor living. The Kitchen has been carefully appointed with a suite of stainless steel appliances from high-end manufacturers like Viking and Sub Zero, custom cabinets and a generous island with counter seating. The secluded primary suite features mountain views, vaulted ceilings, a fireplace, dual bathroom vanities, a walk-in closet and direct access to the backyard /pool area. The grounds feature an awe-inspiring pool and raised spa that seats 10, a beautiful covered outdoor pavilion with its own fireplace for entertainingand an al fresco dining. This immaculate estate combines the utmost privacy and convenience within a stunning natural setting and is located moments from charming boutiques, restaurants and renowned hiking trails. There is so much to see and a surprise everywhere you look. You really do need to come and view this unique property.",
   } as Listing,
+  {
+    id: 4,
+    title: "81765 Avenida Sombra, INDIO, CA 92203",
+    location: "Indio",
+    priceLabel: "Single Family Home",
+    beds: 3,
+    baths: 3,
+    sqft: "2,112",
+    image: "/AvenidaSombra.webp",
+    status: "Represented",
+  } as Listing,
 ];
 
 export default function PropertiesSection() {
