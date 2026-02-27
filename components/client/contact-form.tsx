@@ -15,13 +15,6 @@ export default function ContactForm() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setSubmitted(true);
-  //   setTimeout(() => setSubmitted(false), 3000);
-  //   setFormData({ name: "", email: "", phone: "", interest: "", message: "" });
-  // };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -41,7 +34,7 @@ export default function ContactForm() {
   }
   
   setSubmitted(true);
-  alert("Sent!");
+  // alert("Sent!");
 };
 
 

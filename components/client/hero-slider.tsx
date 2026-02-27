@@ -55,18 +55,18 @@ export function HeroSlider({ children }: HeroSliderProps) {
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    setCurrentLocation((prev) => (prev + 1) % locations.length);
-  };
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + heroSlides.length) % heroSlides.length,
-    );
-    setCurrentLocation(
-      (prev) => (prev - 1 + locations.length) % locations.length,
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  //   setCurrentLocation((prev) => (prev + 1) % locations.length);
+  // };
+  // const prevSlide = () => {
+  //   setCurrentSlide(
+  //     (prev) => (prev - 1 + heroSlides.length) % heroSlides.length,
+  //   );
+  //   setCurrentLocation(
+  //     (prev) => (prev - 1 + locations.length) % locations.length,
+  //   );
+  // };
 
   return (
     <section className="relative h-screen ">

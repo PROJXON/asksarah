@@ -1,10 +1,10 @@
 import {
-  Heart,
-  Users,
-  Award,
-  Sparkles,
-  Shield,
-  Home,
+  // Heart,
+  // Users,
+  // Award,
+  // Sparkles,
+  // Shield,
+  // Home,
   Wrench,
   Network,
 } from "lucide-react";
@@ -16,50 +16,50 @@ export const metadata = {
     "Get to know Sarah Conner - her passion for people, unmatched drive, and personalized approach to luxury real estate from Malibu to the desert.",
 };
 
-const qualities = [
-  {
-    icon: Heart,
-    title: "Passion for People",
-    description:
-      "She is drawn to real estate because she loves helping people find their dream homes and build family wealth. Her integrity, thoughtfulness, and business savvy ensure clients achieve their greatest possible results.",
-    number: "01",
-  },
-  {
-    icon: Sparkles,
-    title: "Unmatched Drive",
-    description:
-      "Her care for clients and unmatched work ethic ensure consistently reliable, detail-oriented service. Clients receive meticulous support before, during, and after transactions.",
-    number: "02",
-  },
-  {
-    icon: Award,
-    title: "Personalized Experience",
-    description:
-      "Known for her strategic mindset, creative vision, and deeply personal approach, Sarah brings a rare combination of business acumen and emotional intelligence to every transaction. With a background in entrepreneurship, marketing, and real estate investment, she helps clients navigate the market with clarity, confidence, and optimal results.",
-    number: "03",
-  },
-  {
-    icon: Shield,
-    title: "Gets the Job Done",
-    description:
-      "Her win/win negotiating style and dependability take the stress out of the real estate process. This isn\u2019t reality TV — it\u2019s real life: no drama, no fuss — just results.",
-    number: "04",
-  },
-  {
-    icon: Users,
-    title: "Dynamic Partnership",
-    description:
-      "Sarah and her business partner Pate collectively bring unparalleled real estate knowledge that spans from Malibu to the desert. Together they\u2019ve closed over one billion dollars in transactions.",
-    number: "05",
-  },
-  {
-    icon: Home,
-    title: "White Glove Service",
-    description:
-      "With Sarah, buyers maximize their potential in creating their dream home and secure the best leverage for their investment. Sellers realize the highest financial potential of their property and sell faster. Every transaction is handled thoughtfully with white-glove, concierge-level service.",
-    number: "06",
-  },
-];
+// const qualities = [
+//   {
+//     icon: Heart,
+//     title: "Passion for People",
+//     description:
+//       "She is drawn to real estate because she loves helping people find their dream homes and build family wealth. Her integrity, thoughtfulness, and business savvy ensure clients achieve their greatest possible results.",
+//     number: "01",
+//   },
+//   {
+//     icon: Sparkles,
+//     title: "Unmatched Drive",
+//     description:
+//       "Her care for clients and unmatched work ethic ensure consistently reliable, detail-oriented service. Clients receive meticulous support before, during, and after transactions.",
+//     number: "02",
+//   },
+//   {
+//     icon: Award,
+//     title: "Personalized Experience",
+//     description:
+//       "Known for her strategic mindset, creative vision, and deeply personal approach, Sarah brings a rare combination of business acumen and emotional intelligence to every transaction. With a background in entrepreneurship, marketing, and real estate investment, she helps clients navigate the market with clarity, confidence, and optimal results.",
+//     number: "03",
+//   },
+//   {
+//     icon: Shield,
+//     title: "Gets the Job Done",
+//     description:
+//       "Her win/win negotiating style and dependability take the stress out of the real estate process. This isn\u2019t reality TV — it\u2019s real life: no drama, no fuss — just results.",
+//     number: "04",
+//   },
+//   {
+//     icon: Users,
+//     title: "Dynamic Partnership",
+//     description:
+//       "Sarah and her business partner Pate collectively bring unparalleled real estate knowledge that spans from Malibu to the desert. Together they\u2019ve closed over one billion dollars in transactions.",
+//     number: "05",
+//   },
+//   {
+//     icon: Home,
+//     title: "White Glove Service",
+//     description:
+//       "With Sarah, buyers maximize their potential in creating their dream home and secure the best leverage for their investment. Sellers realize the highest financial potential of their property and sell faster. Every transaction is handled thoughtfully with white-glove, concierge-level service.",
+//     number: "06",
+//   },
+// ];
 
 export default function WhySarahPage() {
   return (
