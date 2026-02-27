@@ -3,7 +3,6 @@
 import React from "react";
 
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const heroSlides = [
@@ -91,7 +90,7 @@ export function HeroSlider({ children }: HeroSliderProps) {
       ))}
 
       {/* Navigation Arrows */}
-      <button
+      {/* <button
         onClick={prevSlide}
         className="absolute left-6 top-1/2 -translate-y-1/2 z-20 p-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors rounded-full"
         aria-label="Previous slide"
@@ -104,7 +103,7 @@ export function HeroSlider({ children }: HeroSliderProps) {
         aria-label="Next slide"
       >
         <ChevronRight className="h-6 w-6 text-white" />
-      </button>
+      </button> */}
 
       {/* Center Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">

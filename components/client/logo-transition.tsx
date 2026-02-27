@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function LogoTransition() {
   const [showClientLogo, setShowClientLogo] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -12,6 +13,17 @@ export default function LogoTransition() {
     }, 5000); // change every 5s
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 10); // threshold: change when user scrolls down a bit
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
@@ -27,11 +39,11 @@ export default function LogoTransition() {
         style={{ willChange: "opacity" }}
       >
         <Image
-          src="/ASCLOGO2.svg"
-          alt="Ask Sarah Conner"
+          src={scrolled ? "/asclogo2.svg" : "/ASCWHITELOGO.svg"}
+          alt={scrolled ? "ASC Logo 2" : "Ask Sarah Conner"}
           width={300}
           height={80}
-          className="object-contain"
+          className="object-contain "
         />
       </div>
 

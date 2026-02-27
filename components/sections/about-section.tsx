@@ -105,6 +105,13 @@ export default function AboutSection() {
                   "We also have a wide range of allied partners who can be tapped when specialized expertise is needed, such as for real estate law, taxes, banking, design and construction. Whether it\u2019s for a personal residence or an investment property, rest assured we have the answers you\u2019re looking for."
                 }
               </p>
+              <p className="text-3xl md:text-3xl font-serif font-normal leading-tight tracking-tight text-foreground text-center">
+                From Malibu’s Coastal Charm to the Serenity of the Desert
+              </p>
+              <p className="">
+                Buyers and sellers count on our proven expertise that spans from the stunning cliffs and golden sands of Malibu to the tranquil vastness of the desert.
+              </p>
+
             </div>
 
             <div className="mt-10 text-center">

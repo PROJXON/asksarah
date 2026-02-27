@@ -100,7 +100,7 @@ export default function WhySarahPage() {
         </div>
       </section>
 
-      {/* Qualities - Numbered Cards */}
+      {/* Qualities - Numbered Cards
       <section className="py-16 lg:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -133,7 +133,7 @@ export default function WhySarahPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partnership - Split with accent background */}
       <section className="py-16 lg:py-24">
@@ -198,7 +198,7 @@ export default function WhySarahPage() {
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   {
-                    "Whether you\u2019re selling your home or moving into a new one, our talented design team, led by celebrity designer Mark Williams, is here to help you achieve your goals. With an eye for detail and a passion for elegance, we transform spaces to enhance their appeal and maximize their value. Trust us to bring your vision to life and make your property stand out in the market."
+                    " Whether you're selling your home or moving into a new one, our talented design team, led by celebrity designer Mark Williams, is here to help you achieve your goals. With an eye for detail and a passion for elegance, we transform spaces to enhance their appeal and maximize their value. Trust us to bring your vision to life and make your property stand out in the market."
                   }
                 </p>
               </div>
@@ -209,14 +209,14 @@ export default function WhySarahPage() {
               <div className="relative z-10">
                 <Network className="w-8 h-8 text-primary mb-6" />
                 <h3 className="text-2xl font-serif font-light text-foreground mb-2">
-                  My Network is Your Network
+                  Valuble Network
                 </h3>
                 <p className="text-sm text-primary font-medium mb-4">
                   Trusted Resources on Speed Dial
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   {
-                    "All of my friends ask me for advice on the best methods to promote real estate, interior and exterior design, service people, and trusted resources. When you work with me, you get access to my valuable network \u2014 whether you need an electrician, solar, gardening, or any type of service and repair."
+                    "All of Sarah's friends ask her for advice pertaining to the most expert methods to promote real estate, interior and exterior design, service people and trusted resources.  When you hire Sarah you get access to her valuable network whether you need an electrician, solar, gardening or any type of service and repair."
                   }
                 </p>
               </div>
