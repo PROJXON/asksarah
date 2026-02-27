@@ -11,19 +11,19 @@ export default function LogoTransition() {
 
   const isHomePage = pathname === "/";
 
-  // On non-home pages or when scrolled: always show asclogo2
-  // On home page hero: alternate between logos
-  const showClientLogo = (!isHomePage || scrolled) ? true : alternating;
+  // On non-home pages: always show client logo (ASCLOGO2)
+  // On home page: alternate between logos, even after scrolling
+  const showClientLogo = isHomePage ? alternating : true;
 
   useEffect(() => {
-    if (!isHomePage || scrolled) return; // only alternate on home hero
+    if (!isHomePage) return; // only alternate on home page
 
     const interval = setInterval(() => {
       setAlternating((prev) => !prev);
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [scrolled, isHomePage]);
+  }, [isHomePage]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -44,7 +44,7 @@ export default function LogoTransition() {
         style={{ willChange: "opacity" }}
       >
         <Image
-          src={isWhiteBg ? "/asclogo2.svg" : "/ASCWHITELOGO.svg"}
+          src={isWhiteBg ? "/ASCLOGO2.svg" : "/ASCWHITELOGO.svg"}
           alt="Ask Sarah Conner"
           width={300}
           height={80}
