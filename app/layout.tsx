@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   title: "Sarah Conner | Luxury Real Estate | Malibu & Los Angeles",
   description:
     "Your trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, and Los Angeles. Strategic guidance, creative vision, and personalized service from The Agency.",
+     verification: {
+    google: "0QGKNh0-6VSbpaJhO9CDQhfjzCMfJBKLAY8zd1h13pk",
+  },
 };
 
 export default function RootLayout({
