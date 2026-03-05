@@ -37,6 +37,17 @@ const testimonials: Testimonial[] = [
     quote:
       "Through Sarah's and her partner, Pate's, help and guidance, we purchased a multi-million dollar investment property. I am a retired attorney and my husband and I are passionate about real estate and design, and can recognize quality and excellence in those representing us. Sarah and Pate were beyond exceptional. After the purchase, Sarah is helping us manage the home as a luxury rental property and her help is invaluable.",
     author: "R. Goldman",
+    headshot: "/R-Goldman.webp",
+  },
+  {
+    quote: "I met Sarah when I was out shopping. The next day I had her over to discuss listing my home. She helped stage it and it sold in a week full asking price with multiple offers. Working with the team of Sarah and Pate was my smoothest transaction ever. Look no further if you are looking for a team you can trust that will deliver top dollar.",
+    author: "Senior Executives, Ernst & Young ",
+    headshot: "/Ernst-Young.webp",
+  },
+  {
+    quote: "We met Sarah and instantly trusted her. I’ve spent decades in commercial real estate so I am well versed in service and transactions. My wife and I are thrilled with the home we purchased and the transaction was incredibly smooth. Sarah and her partner Pate gave us fantastic service during and after the sale. Look no further if you are buying or selling residential real estate. ",
+    author: "Jerry Palmer",
+    headshot: "/Jerry-Palmer.webp",
   },
  
 ];
