@@ -4,7 +4,7 @@ import {
   // Award,
   // Sparkles,
   // Shield,
-  // Home,
+  Home,
   Wrench,
   Network,
 } from "lucide-react";
@@ -21,28 +21,28 @@ export const metadata = {
 //     icon: Heart,
 //     title: "Passion for People",
 //     description:
-//       "She is drawn to real estate because she loves helping people find their dream homes and build family wealth. Her integrity, thoughtfulness, and business savvy ensure clients achieve their greatest possible results.",
+//       "Sarah is drawn to real estate because she loves helping people find their dream homes and build their family wealth. Her integrity, thoughtfulness, and business savvy ensure her clients – both buyers and sellers – achieve their greatest possible results.",
 //     number: "01",
 //   },
 //   {
 //     icon: Sparkles,
 //     title: "Unmatched Drive",
 //     description:
-//       "Her care for clients and unmatched work ethic ensure consistently reliable, detail-oriented service. Clients receive meticulous support before, during, and after transactions.",
+//       "Sarah’s care for her clients and unmatched work ethic mean you will receive constantly reliable, detail-oriented service. Sarah provides meticulous service before, during, and after transactions.",
 //     number: "02",
 //   },
 //   {
 //     icon: Award,
 //     title: "Personalized Experience",
 //     description:
-//       "Known for her strategic mindset, creative vision, and deeply personal approach, Sarah brings a rare combination of business acumen and emotional intelligence to every transaction. With a background in entrepreneurship, marketing, and real estate investment, she helps clients navigate the market with clarity, confidence, and optimal results.",
+//       "Known for her strategic mindset, creative vision, and deeply personal approach, Sarah brings a rare combination of business acumen and emotional intelligence to every transaction. With a background in entrepreneurship, marketing, and real estate investment, Sarah helps her clients navigate the market with clarity, confidence, and greatest results.",
 //     number: "03",
 //   },
 //   {
 //     icon: Shield,
 //     title: "Gets the Job Done",
 //     description:
-//       "Her win/win negotiating style and dependability take the stress out of the real estate process. This isn\u2019t reality TV — it\u2019s real life: no drama, no fuss — just results.",
+//       "Sarah’s win/win negotiating style and dependability take the stress out of the real estate process. This isn’t reality TV, this is your real life. No drama, no fuss — all results.",
 //     number: "04",
 //   },
 //   {
@@ -100,15 +100,15 @@ export default function WhySarahPage() {
         </div>
       </section>
 
-      {/* Qualities - Numbered Cards
-      <section className="py-16 lg:py-24 bg-secondary/40">
+      {/* Qualities - Numbered Cards */}
+      {/* <section className="py-16 lg:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm tracking-[0.15em] uppercase text-primary font-medium mb-4">
               Why Clients Choose Sarah
             </p>
             <h2 className="text-3xl md:text-5xl font-serif font-light text-foreground">
-              Six Reasons to Work With Me
+              Reasons to Work With Sarah 
             </h2>
           </div>
 
@@ -132,8 +132,8 @@ export default function WhySarahPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section> */}
+        </div> */}
+      {/* </section> */}
 
       {/* Partnership - Split with accent background */}
       <section className="py-16 lg:py-24">
@@ -185,42 +185,56 @@ export default function WhySarahPage() {
       {/* Design Team & Network */}
       <section className="py-16 lg:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-6">
-            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all">
-              <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <Wrench className="w-8 h-8 text-primary mb-6" />
-                <h3 className="text-2xl font-serif font-light text-foreground mb-2">
-                  Top Tier Design Team
-                </h3>
-                <p className="text-sm text-primary font-medium mb-4">
-                  Led by Mark Williams
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  {
-                    " Whether you're selling your home or moving into a new one, our talented design team, led by celebrity designer Mark Williams, is here to help you achieve your goals. With an eye for detail and a passion for elegance, we transform spaces to enhance their appeal and maximize their value. Trust us to bring your vision to life and make your property stand out in the market."
-                  }
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch">
+        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+          <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+          <div className="relative z-10 flex-1">
+            <Wrench className="w-8 h-8 text-primary mb-6" />
+            <h3 className="text-2xl font-serif font-light text-foreground mb-2">
+          Top Tier Design Team
+            </h3>
+            <p className="text-sm text-primary font-medium mb-4">Led by Mark Williams</p>
+            <p className="text-muted-foreground leading-relaxed">
+          Whether you're selling your home or moving into a new one, our talented design team, led by celebrity designer Mark Williams, is here to help you achieve your goals. With an eye for detail and a passion for elegance, we transform spaces to enhance their appeal and maximize their value. Trust us to bring your vision to life and make your property stand out in the market.  
+            </p>
+          </div>
+        </div>
 
-            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all">
-              <div className="absolute -top-12 -right-12 w-40 h-40 bg-amber-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-              <div className="relative z-10">
-                <Network className="w-8 h-8 text-primary mb-6" />
-                <h3 className="text-2xl font-serif font-light text-foreground mb-2">
-                  Valuble Network
-                </h3>
-                <p className="text-sm text-primary font-medium mb-4">
-                  Trusted Resources on Speed Dial
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  {
-                    "All of Sarah's friends ask her for advice pertaining to the most expert methods to promote real estate, interior and exterior design, service people and trusted resources.  When you hire Sarah you get access to her valuable network whether you need an electrician, solar, gardening or any type of service and repair."
-                  }
-                </p>
-              </div>
-            </div>
+        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+          <div className="absolute -top-12 -right-12 w-40 h-40 bg-amber-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+          <div className="relative z-10 flex-1">
+            <Network className="w-8 h-8 text-primary mb-6" />
+            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Valuable Network</h3>
+            <p className="text-sm text-primary font-medium mb-4">Trusted Resources on Speed Dial</p>
+            <p className="text-muted-foreground leading-relaxed">
+          All of Sarah's friends ask her for advice pertaining to the most expert methods to promote real estate, interior and exterior design, service people and trusted resources.  When you hire Sarah you get access to her valuable network whether you need an electrician, solar, gardening or any type of service and repair.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+          <div className="absolute -top-12 -right-12 w-40 h-40 bg-green-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+          <div className="relative z-10 flex-1">
+            <Home className="w-8 h-8 text-primary mb-6" />
+            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Mortgage Assistance</h3>
+            <p className="text-sm text-primary font-medium mb-4">Financing Guidance & Support</p>
+            <p className="text-muted-foreground leading-relaxed">
+          Our team helps you navigate the mortgage process and find the best financing options for your unique situation.
+            </p>
+          </div>
+        </div>
+
+        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+          <div className="absolute -top-12 -right-12 w-40 h-40 bg-sky-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+          <div className="relative z-10 flex-1">
+            <Network className="w-8 h-8 text-primary mb-6" />
+            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Pacific Palisades</h3>
+            <p className="text-sm text-primary font-medium mb-4">Local Experience & Leadership</p>
+            <p className="text-muted-foreground leading-relaxed">
+          As a longtime Palisades resident who rebuilt after losing her own home to a fire, Sarah brings firsthand insight into recovery, insurance, and rebuilding. Outside agents sometimes act like they know the area — Sarah's lived experience and service as former Chair of the Pacific Palisades Residents Association let her advise clients with authority and empathy.
+            </p>
+          </div>
+        </div>
           </div>
         </div>
       </section>
