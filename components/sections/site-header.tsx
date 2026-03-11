@@ -4,14 +4,9 @@ import { Phone } from "lucide-react";
 import HeaderInteractions from "@/components/client/header-interactions";
 
 const navLinks = [
-  {
-    label: "About",
-    dropdown: [
-      { href: "/#about-section", label: "About Us" },
-      { href: "/why-ASC", label: "Sarah Conner" },
-      { href: "https://www.theagencyre.com/agent/pate-stevens", label: "Pate Stevens", external: true },
-    ],
-  },
+  { href: "/#about-section", label: "About" },
+  { href: "/why-ASC", label: "Sarah Conner" },
+  { href: "https://www.theagencyre.com/agent/pate-stevens", label: "Pate Stevens", external: true },
   { href: "/#testimonial-section", label: "Testimonials" },
   { href: "/#contact", label: "Ask" },
   { href: "/#listings-section", label: "Properties" },
@@ -36,57 +31,17 @@ export default function Header() {
             aria-label="Desktop navigation"
           >
             {navLinks.map((link) =>
-              link.dropdown ? (
-                // Dropdown trigger — rendered server-side as a plain anchor,
-                // HeaderInteractions will wire up the interactivity via data attrs
-                <div key={link.label} className="relative" data-dropdown-wrapper>
-                  <button
-                    data-navlink
-                    data-dropdown-trigger
-                    className="text-md tracking-wider uppercase font-medium transition-colors text-white/80 hover:text-white flex items-center gap-1"
-                    type="button"
-                  >
-                    {link.label}
-                    <svg
-                      data-dropdown-chevron
-                      className="h-3.5 w-3.5 transition-transform duration-200"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-
-                  {/* Dropdown panel — hidden by default, toggled by HeaderInteractions */}
-                  <div
-                    data-dropdown-panel
-                    className="hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 w-44 bg-background/95 backdrop-blur border border-border rounded-sm shadow-lg py-1 z-50"
-                  >
-                    {link.dropdown.map((item) =>
-                      item.external ? (
-                        <a
-                          key={item.href}
-                          href={item.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="block px-4 py-2.5 text-sm tracking-wider uppercase text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                        >
-                          {item.label}
-                        </a>
-                      ) : (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block px-4 py-2.5 text-sm tracking-wider uppercase text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                </div>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-navlink
+                  className="text-md tracking-wider uppercase font-medium transition-colors text-white/80 hover:text-white"
+                >
+                  {link.label}
+                </a>
               ) : (
                 <Link
                   key={link.href}
