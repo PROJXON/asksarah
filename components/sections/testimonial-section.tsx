@@ -80,7 +80,7 @@ export default function TestimonialSection() {
           Ready to be the next success story?
         </p>
         <a
-          href="tel:+13108717600"
+          href="tel:+1310-871-7600"
           className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-lg font-medium tracking-wider  hover:bg-primary/90 transition-colors rounded-sm"
         >
           <Phone className="h-4 w-4" />

@@ -89,7 +89,7 @@ export default function ContactSection() {
 
             <div className="space-y-6">
               <a
-                href="tel:+13108717600"
+                href="tel:+1310-871-7600"
                 className="flex items-center gap-4 text-foreground hover:text-accent transition-colors"
               >
                 <Phone className="h-5 w-5" />
@@ -142,7 +142,7 @@ export default function ContactSection() {
             <div className="mt-12 p-6 bg-secondary">
               <p className="text-foreground mb-4">Prefer to talk?</p>
               <a
-                href="tel:+3108717600"
+                href="tel:+1310-871-7600"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-sm font-medium tracking-widest uppercase hover:bg-primary/90 transition-colors"
               >
                 <Phone className="h-4 w-4" />

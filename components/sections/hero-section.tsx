@@ -6,7 +6,7 @@ export default function HeroSection() {
     <HeroSlider>
       <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
         <a
-          href="tel:+1310871760"
+          href="tel:+1310-871-760"
           className="bg-white text-stone-800 px-10 py-5 text-base font-medium tracking-wide hover:bg-white/90 transition-all flex items-center gap-3 rounded-md"
         >
           <Phone className="h-5 w-5" />

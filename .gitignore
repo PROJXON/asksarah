@@ -4,6 +4,8 @@
 infra/terraform/.terraform/
 infra/terraform/terraform.tfstate
 infra/terraform/terraform.tfstate.backup
+*.tfstate
+*.tfstate.backup
 
 # dependencies
 /node_modules
@@ -44,3 +46,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+

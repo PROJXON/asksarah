@@ -73,7 +73,7 @@ export function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href="tel:+3108717600"
+                href="tel:+1310-871-7600"
                 className="flex items-center gap-3 text-primary-foreground/70 hover:text-primary-foreground transition-colors"
               >
                 <Phone className="h-5 w-5" />

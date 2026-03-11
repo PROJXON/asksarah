@@ -248,7 +248,7 @@ export function StatsSection() {
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-4 ">Not sure where to start?</p>
           <a
-            href="tel:+13108717600"
+            href="tel:+1310-871-7600"
             className="inline-flex items-center gap-3 text-foreground hover:text-accent transition-colors"
           >
             <Phone className="h-5 w-5" />
