@@ -40,7 +40,7 @@ export default function AboutSection() {
             </div>
             <div className="mt-10 flex flex-col sm:flex-row items-center lg:items-start gap-4">
               <a
-                href="tel:+13105551234"
+                href="tel:+1310-871-7600"
                 className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-base font-medium tracking-wide hover:bg-primary/90 transition-colors rounded-md"
               >
                 <Phone className="h-4 w-4" />
