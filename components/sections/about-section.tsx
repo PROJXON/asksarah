@@ -111,7 +111,6 @@ export default function AboutSection() {
               <p className="">
                 Buyers and sellers count on our proven expertise that spans from the stunning cliffs and golden sands of Malibu to the tranquil vastness of the desert.
               </p>
-
             </div>
 
             <div className="mt-10 text-center">
@@ -122,6 +121,26 @@ export default function AboutSection() {
                 Contact Us With Your Questions
                 <ArrowRight className="h-4 w-4" />
               </a>
+            </div>
+            <div className="mt-12 grid lg:grid-cols-2 gap-8 items-center">
+              <div className="aspect-[4/3] overflow-hidden rounded-lg">
+              <Image
+                src="/Interior.webp"
+                alt="Interior Design"
+                width={800}
+                height={600}
+                className="w-full h-full object-cover"
+              />
+              </div>
+              <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
+              <h3 className="text-2xl font-serif text-foreground">Gain Higher Values With Updated Design</h3>
+              <p>
+                With our design expertise we help achieve the highest value when selling. The AskSarahConner design team can also assist clients with design and renovations before the sale or after you purchase.
+              </p>
+              <p className="font-medium">
+                Ask us about interior and exterior design possibilities if you are selling or buying a home!
+              </p>
+              </div>
             </div>
           </div>
         </div>
