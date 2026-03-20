@@ -50,6 +50,38 @@ docker pull "${IMAGE_URI}"
 echo "Removing any existing container..."
 docker rm -f "${CONTAINER_NAME}" >/dev/null 2>&1 || true
 
+echo "Fetching secrets from SSM Parameter Store..."
+RESEND_API_KEY=$(aws ssm get-parameter \
+  --name "/asksarah/RESEND_API_KEY" \
+  --with-decryption \
+  --region "${REGION}" \
+  --query "Parameter.Value" \
+  --output text)
+
+CONTACT_FROM_EMAIL=$(aws ssm get-parameter \
+  --name "/asksarah/CONTACT_FROM_EMAIL" \
+  --region "${REGION}" \
+  --query "Parameter.Value" \
+  --output text)
+
+CONTACT_TO_EMAIL=$(aws ssm get-parameter \
+  --name "/asksarah/CONTACT_TO_EMAIL" \
+  --region "${REGION}" \
+  --query "Parameter.Value" \
+  --output text)
+
+NEXT_PUBLIC_GA_MEASUREMENT_ID=$(aws ssm get-parameter \
+  --name "/asksarah/NEXT_PUBLIC_GA_MEASUREMENT_ID" \
+  --region "${REGION}" \
+  --query "Parameter.Value" \
+  --output text)
+
+NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=$(aws ssm get-parameter \
+  --name "/asksarah/NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION" \
+  --region "${REGION}" \
+  --query "Parameter.Value" \
+  --output text)
+
 echo "Starting container ${CONTAINER_NAME}..."
 docker run -d \
   --name "${CONTAINER_NAME}" \
@@ -57,6 +89,11 @@ docker run -d \
   -p ${PORT}:${PORT} \
   -e PORT=${PORT} \
   -e NODE_ENV=production \
+  -e RESEND_API_KEY="${RESEND_API_KEY}" \
+  -e CONTACT_FROM_EMAIL="${CONTACT_FROM_EMAIL}" \
+  -e CONTACT_TO_EMAIL="${CONTACT_TO_EMAIL}" \
+  -e NEXT_PUBLIC_GA_MEASUREMENT_ID="${NEXT_PUBLIC_GA_MEASUREMENT_ID}" \
+  -e NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION="${NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION}" \
   "${IMAGE_URI}"
 
 echo "Container ${CONTAINER_NAME} is running."

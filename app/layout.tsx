@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description:
     "Your trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, and Los Angeles. Strategic guidance, creative vision, and personalized service from The Agency.",
      verification: {
-    google: "0QGKNh0-6VSbpaJhO9CDQhfjzCMfJBKLAY8zd1h13pk",
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -44,7 +44,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-2QN0CB62PP"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -52,7 +52,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-2QN0CB62PP');
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID});
           `}
         </Script>
       </head>

@@ -49,7 +49,7 @@ variable "asg_desired_capacity" {
 variable "ssh_ingress_cidrs" {
   description = "CIDR blocks allowed to SSH into EC2 instances."
   type        = list(string)
-  default     = ["0.0.0.0/0"]
+  default     = ["174.219.9.176/32"]
 }
 
 variable "github_owner" {
