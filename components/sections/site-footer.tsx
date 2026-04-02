@@ -91,6 +91,9 @@ export function Footer() {
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 sarah@asksarahconner.com
               </a>
+              <p className="text-primary-foreground/50 text-sm">
+                License: #02272182
+              </p>
             </div>
 
             <div className="mt-3 w-full">
