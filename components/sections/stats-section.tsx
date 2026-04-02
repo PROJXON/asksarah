@@ -185,7 +185,7 @@ export function StatsSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-sans italic text-foreground">
