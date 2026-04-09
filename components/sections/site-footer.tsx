@@ -91,6 +91,9 @@ export function Footer() {
                 <Mail className="h-5 w-5 flex-shrink-0" />
                 sarah@asksarahconner.com
               </a>
+              <p className="text-red-500 text-sm font-medium">
+                RealTrends Verified Top 1.5% Agents in America
+              </p>
               <p className="text-primary-foreground/50 text-sm">
                 License: #02272182
               </p>
