@@ -11,7 +11,7 @@ export type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Sarah is the most fantastic realtor I've ever hired. She located an incredible home, and negotiated below market price in Rancho Mirage, CA. I can't say enough about her and what she does for me. She assisted with many aspects of the negotiation, has gone above and beyond in helping me meet contractor’s, and find furnishings! She did not just disappear after the sale!",
+      "Sarah is the most fantastic realtor I've ever hired. She located an incredible home, and negotiated below market price in Rancho Mirage, CA. I can't say enough about her and what she does for me. She assisted with many aspects of the negotiation, has gone above and beyond in helping me meet contractors, and find furnishings! She did not just disappear after the sale!",
     author: 'Jacob E "Jack" Tauber, MD',
     headshot: "/Jack.jpeg",
   },

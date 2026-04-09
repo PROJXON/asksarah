@@ -185,15 +185,23 @@ export function StatsSection() {
           </p>
         </div>
 
+        
+
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-sans italic text-foreground">
-                {stat.value}
+          {stat.value}
               </p>
               <p className="mt-2 text-base text-muted-foreground">{stat.label}</p>
             </div>
           ))}
+        </div>
+         <div className="text-center mb-6 mt-12">
+          <p className="text-3xl font-serif md:text-4xl font-bold text-red-600">
+            Real Trends Verified  Top 1.5% Agents in America
+            {/* Awarded Top 1.5% Agents in America by Real Trends */}
+          </p>
         </div>
 
         <div className="text-center mb-12 mt-20">

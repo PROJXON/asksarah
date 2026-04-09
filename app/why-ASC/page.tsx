@@ -186,29 +186,34 @@ export default function WhySarahPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <p className="text-sm tracking-[0.15em] uppercase text-primary font-medium mb-4">
-            Giving Back
+        Giving Back
           </p>
           <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-2 md:-mt-3">
-            Our Commitment to Community
+        Our Commitment to Community
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-lg">
-            <p>
+        <p>
           Sarah Conner has been a philanthropist for over two decades. She's been Chairman for American Technion Society, Board Chair of Pacific Palisades Residents Association and a leader for World of Children Awards. With every transaction she would be delighted to donate a generous portion of sales commission to your favorite charitable cause.
-            </p>
-            <p>
+        </p>
+        <p>
           We are passionate about giving back. Ask us how we can make a donation to your favorite cause or charity when you buy or sell your home with AskSarahConner.com. 
-            </p>
+        </p>
           </div>
         </div>
 
-        <div className="aspect-[4/5] rounded-xl overflow-hidden">
-          <Image
-            src="/giving-back.webp"
-            alt="Giving back community outreach"
-            className="w-full h-full object-cover"
-            width={600}
-            height={750}
-          />
+        <div className="flex flex-col items-center">
+          <div className="aspect-[4/5] rounded-xl overflow-hidden w-full">
+        <Image
+          src="/giving-back.webp"
+          alt="Giving back community outreach"
+          className="w-full h-full object-cover"
+          width={600}
+          height={750}
+        />
+          </div>
+          <p className="mt-3 text-center text-sm text-muted-foreground">
+        Brooke Burke &amp; Sarah Conner
+          </p>
         </div>
           </div>
         </div>
