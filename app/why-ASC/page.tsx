@@ -14,6 +14,9 @@ export const metadata = {
   title: "More About Sarah Conner | Ask Sarah Conner",
   description:
     "Get to know Sarah Conner - her passion for people, unmatched drive, and personalized approach to luxury real estate from Malibu to the desert.",
+  alternates: {
+    canonical: "/why-ASC",
+  },
 };
 
 // const qualities = [
@@ -72,9 +75,9 @@ export default function WhySarahPage() {
                 More About Sarah Conner
               </p>
               <div className="mt-20 space-y-6 text-muted-foreground leading-relaxed text-lg">
-                <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-8 md:-mt-10 relative z-10">
+              <h1 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-8 md:-mt-10 relative z-10">
                   A Legacy Unlocked
-                </h2>
+              </h1>
                 <p>
                   {
                     "Sarah's real estate career began with her own family's portfolio \u2014 buying, renovating, and managing properties across Southern California. As she began helping friends find homes and investment opportunities, the next step came naturally."
@@ -227,12 +230,12 @@ export default function WhySarahPage() {
           <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
           <div className="relative z-10 flex-1">
             <Wrench className="w-8 h-8 text-primary mb-6" />
-            <h3 className="text-2xl font-serif font-light text-foreground mb-2">
-          Top Tier Design Team
+            <h3 className="text-2xl font-serif font-medium text-foreground mb-2">
+          The AskSarahConner Design & Renovation Program
             </h3>
-            <p className="text-sm text-primary font-medium mb-4">Led by Mark Williams</p>
+            <p className="text-sm text-primary font-medium mb-4">Pre-Sale & Post-Purchase Design Led by Mark Williams</p>
             <p className="text-muted-foreground leading-relaxed">
-          Whether you're selling your home or moving into a new one, our talented design team, led by celebrity designer Mark Williams, is here to help you achieve your goals. With an eye for detail and a passion for elegance, we transform spaces to enhance their appeal and maximize their value. Trust us to bring your vision to life and make your property stand out in the market.  
+          Unlike traditional agents, we offer an in-house interior design and renovation advisory service. Whether you need strategic pre-listing renovations to maximize your sale price (often paid out of escrow), or post-purchase design to turn a new house into your dream estate, our celebrity-led design team manages the entire process to ensure you gain higher property values.
             </p>
           </div>
         </div>

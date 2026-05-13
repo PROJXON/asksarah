@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import Header from "@/components/sections/site-header";
 import { Footer } from "@/components/sections/site-footer";
+import SchemaMarkup from "@/components/sections/schema-markup";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -27,9 +28,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://asksarahconner.com"),
   title: "Sarah Conner | Luxury Real Estate | Malibu & Los Angeles",
   description:
-    "Your trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, and Los Angeles. Strategic guidance, creative vision, and personalized service from The Agency.",
+    "Trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, & LA. Strategic guidance & personalized service from The Agency.",
+  alternates: {
+    canonical: "/",
+  },
      verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
@@ -52,13 +57,14 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID});
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
           `}
         </Script>
       </head>
       <body
         className={`${montserrat.variable} ${lato.variable} ${playfair.variable} font-sans antialiased`}
       >
+        <SchemaMarkup />
         <Header />
         {children}
         <Analytics />

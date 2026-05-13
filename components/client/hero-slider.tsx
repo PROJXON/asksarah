@@ -111,9 +111,9 @@ export function HeroSlider({ children }: HeroSliderProps) {
           Ask Sarah Conner
         </h1>
 
-        <p className="mt-6 text-base md:text-lg tracking-[0.15em] uppercase text-white/70 font-medium">
+      <h2 className="mt-6 text-base md:text-lg tracking-[0.15em] uppercase text-white/70 font-medium">
           From Malibu’s Coastal Charm to the Serenity of the Desert
-        </p>
+      </h2>
 
         {/* Animated Location List */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 md:gap-x-3 max-w-2xl">

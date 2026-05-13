@@ -11,6 +11,7 @@ export type Listing = {
   sqft: string;
   image?: string;
   status: "Represented" | "In Escrow" | "Sold" | "Portfolio";
+  description?: string;
 };
 
 const listings: Listing[] = [
@@ -63,6 +64,19 @@ const listings: Listing[] = [
     sqft: "2,112",
     image: "/AvenidaSombra.webp",
     status: "Represented",
+  } as Listing,
+  {
+    id: 5,
+    title: "14 Belmonte Dr, PALM DESERT, CA 92211",
+    location: "Palm Desert",
+    priceLabel: "Contemporary Residence",
+    beds: 3,
+    baths: 3,
+    sqft: "2,466",
+    image: "/Belmonte-Palm-Desert.webp",
+    status: "Represented",
+    description:
+      "Discover resort-style living at its finest at 14 Belmonte, a stunning three-bedroom, three-bath residence in one of Palm Desert's most desirable communities. [1] Light, bright, and beautifully designed, this home offers an incredible layout that maximizes comfort, style, and effortless indoor-outdoor living. The backyard evokes the feel of a luxury resort—ultra-private, serene, and designed for year-round enjoyment. Located in an exclusive HOA community of just 88 estate homes, the property offers tremendous value and a rare combination of privacy, elegance, and convenience, just minutes from the world-class shopping and dining of El Paseo. [1]",
   } as Listing,
 ];
 

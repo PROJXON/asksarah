@@ -34,9 +34,9 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="flex flex-col items-start gap-4 min-w-0">
-            <h4 className="font-medium text-lg tracking-wider font-serif mb-2">
+            <h2 className="font-medium text-lg tracking-wider font-serif mb-2">
               Navigate
-            </h4>
+            </h2>
             <nav className="flex flex-col space-y-3">
               <Link
                 href="#about"
@@ -73,9 +73,9 @@ export function Footer() {
 
           {/* Contact & Socials */}
           <div className="flex flex-col items-start gap-4 min-w-0">
-            <h4 className="font-medium tracking-wider font-serif text-lg mb-2">
+            <h2 className="font-medium tracking-wider font-serif text-lg mb-2">
               Contact
-            </h4>
+            </h2>
             <div className="space-y-3 w-full">
               <a
                 href="tel:+1310-871-7600"
@@ -100,9 +100,9 @@ export function Footer() {
             </div>
 
             <div className="mt-3 w-full">
-              <h4 className="font-medium tracking-wider font-serif text-lg mb-3">
+              <h3 className="font-medium tracking-wider font-serif text-lg mb-3">
                 Socials
-              </h4>
+              </h3>
               <div className="flex items-center gap-4">
                 <a
                   href="https://www.linkedin.com/in/sarah-beth-rena-conner-22776620/"
@@ -169,9 +169,9 @@ export function Footer() {
 
           {/* Address */}
           <div className="flex flex-col items-start gap-4 min-w-0">
-            <h4 className="font-medium tracking-wider font-serif text-lg mb-2">
+            <h2 className="font-medium tracking-wider font-serif text-lg mb-2">
               Offices
-            </h4>
+            </h2>
             <address className="not-italic text-primary-foreground/60 leading-relaxed break-words whitespace-normal">
               <div>
                 <span className="font-medium">The Agency — Beverly Hills</span>

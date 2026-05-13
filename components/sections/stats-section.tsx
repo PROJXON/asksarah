@@ -198,10 +198,10 @@ export function StatsSection() {
           ))}
         </div>
          <div className="text-center mb-6 mt-12">
-          <p className="text-3xl font-serif md:text-4xl font-bold text-red-600">
+          <h2 className="text-3xl font-serif md:text-4xl font-bold text-red-600">
             Real Trends Verified  Top 1.5% Agents in America
             {/* Awarded Top 1.5% Agents in America by Real Trends */}
-          </p>
+          </h2>
         </div>
 
         <div className="text-center mb-12 mt-20">
