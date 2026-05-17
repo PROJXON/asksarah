@@ -17,6 +17,22 @@ export const metadata = {
   alternates: {
     canonical: "/why-ASC",
   },
+  openGraph: {
+    title: "More About Sarah Conner | Ask Sarah Conner",
+    description: "Get to know Sarah Conner - her passion for people, unmatched drive, and personalized approach to luxury real estate from Malibu to the desert.",
+    url: "https://asksarahconner.com/why-ASC",
+    siteName: "Ask Sarah Conner",
+    images: [
+      {
+        url: "/Sarah-Conner.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Sarah Conner - Luxury Real Estate Agent",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 // const qualities = [
@@ -75,9 +91,9 @@ export default function WhySarahPage() {
                 More About Sarah Conner
               </p>
               <div className="mt-20 space-y-6 text-muted-foreground leading-relaxed text-lg">
-              <h1 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-8 md:-mt-10 relative z-10">
+                <h1 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-8 md:-mt-10 relative z-10">
                   A Legacy Unlocked
-              </h1>
+                </h1>
                 <p>
                   {
                     "Sarah's real estate career began with her own family's portfolio \u2014 buying, renovating, and managing properties across Southern California. As she began helping friends find homes and investment opportunities, the next step came naturally."
@@ -160,9 +176,7 @@ export default function WhySarahPage() {
                 </div>
                 <div className="mt-8 space-y-5 text-primary-foreground/80 text-lg leading-relaxed">
                   <p>
-                    Pate and Sarah partner on each transaction, working
-                    seamlessly together. They have closed over one billion
-                    dollars in real estate transactions.
+                    Sarah Conner and Pate Stevens are partnered Real Estate Advisors at The Agency. They collaborate seamlessly on every transaction, bringing together a combined expertise that has resulted in over one billion dollars in closed real estate sales.
                   </p>
                   <p>
                     Their combined expertise spans from Malibu to the desert,
@@ -187,37 +201,37 @@ export default function WhySarahPage() {
       <section className="py-16 lg:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <p className="text-sm tracking-[0.15em] uppercase text-primary font-medium mb-4">
-        Giving Back
-          </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-2 md:-mt-3">
-        Our Commitment to Community
-          </h2>
-          <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-lg">
-        <p>
-          Sarah Conner has been a philanthropist for over two decades. She's been Chairman for American Technion Society, Board Chair of Pacific Palisades Residents Association and a leader for World of Children Awards. With every transaction she would be delighted to donate a generous portion of sales commission to your favorite charitable cause.
-        </p>
-        <p>
-          We are passionate about giving back. Ask us how we can make a donation to your favorite cause or charity when you buy or sell your home with AskSarahConner.com. 
-        </p>
-          </div>
-        </div>
+            <div>
+              <p className="text-sm tracking-[0.15em] uppercase text-primary font-medium mb-4">
+                Giving Back
+              </p>
+              <h2 className="text-3xl md:text-4xl font-serif font-light text-foreground leading-tight -mt-2 md:-mt-3">
+                Our Commitment to Community
+              </h2>
+              <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed text-lg">
+                <p>
+                  Sarah Conner has been a philanthropist for over two decades. She's been Chairman for American Technion Society, Board Chair of Pacific Palisades Residents Association and a leader for World of Children Awards. With every transaction she would be delighted to donate a generous portion of sales commission to your favorite charitable cause.
+                </p>
+                <p>
+                  We are passionate about giving back. Ask us how we can make a donation to your favorite cause or charity when you buy or sell your home with AskSarahConner.com.
+                </p>
+              </div>
+            </div>
 
-        <div className="flex flex-col items-center">
-          <div className="aspect-[4/5] rounded-xl overflow-hidden w-full">
-        <Image
-          src="/giving-back.webp"
-          alt="Giving back community outreach"
-          className="w-full h-full object-cover"
-          width={600}
-          height={750}
-        />
-          </div>
-          <p className="mt-3 text-center text-sm text-muted-foreground">
-        Brooke Burke &amp; Sarah Conner
-          </p>
-        </div>
+            <div className="flex flex-col items-center">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden w-full">
+                <Image
+                  src="/giving-back.webp"
+                  alt="Giving back community outreach"
+                  className="w-full h-full object-cover"
+                  width={600}
+                  height={750}
+                />
+              </div>
+              <p className="mt-3 text-center text-sm text-muted-foreground">
+                Brooke Burke &amp; Sarah Conner
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -226,55 +240,55 @@ export default function WhySarahPage() {
       <section className="py-16 lg:py-24 bg-secondary/40">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch">
-        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
-          <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-          <div className="relative z-10 flex-1">
-            <Wrench className="w-8 h-8 text-primary mb-6" />
-            <h3 className="text-2xl font-serif font-medium text-foreground mb-2">
-          The AskSarahConner Design & Renovation Program
-            </h3>
-            <p className="text-sm text-primary font-medium mb-4">Pre-Sale & Post-Purchase Design Led by Mark Williams</p>
-            <p className="text-muted-foreground leading-relaxed">
-          Unlike traditional agents, we offer an in-house interior design and renovation advisory service. Whether you need strategic pre-listing renovations to maximize your sale price (often paid out of escrow), or post-purchase design to turn a new house into your dream estate, our celebrity-led design team manages the entire process to ensure you gain higher property values.
-            </p>
-          </div>
-        </div>
+            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-red-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex-1">
+                <Wrench className="w-8 h-8 text-primary mb-6" />
+                <h3 className="text-2xl font-serif font-medium text-foreground mb-2">
+                  The AskSarahConner Design & Renovation Program
+                </h3>
+                <p className="text-sm text-primary font-medium mb-4">Pre-Sale & Post-Purchase Design Led by Mark Williams</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Unlike traditional agents, we offer an in-house interior design and renovation advisory service. Whether you need strategic pre-listing renovations to maximize your sale price (often paid out of escrow), or post-purchase design to turn a new house into your dream estate, our celebrity-led design team manages the entire process to ensure you gain higher property values.
+                </p>
+              </div>
+            </div>
 
-        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
-          <div className="absolute -top-12 -right-12 w-40 h-40 bg-amber-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-          <div className="relative z-10 flex-1">
-            <Network className="w-8 h-8 text-primary mb-6" />
-            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Valuable Network</h3>
-            <p className="text-sm text-primary font-medium mb-4">Trusted Resources on Speed Dial</p>
-            <p className="text-muted-foreground leading-relaxed">
-          All of Sarah's friends ask her for advice pertaining to the most expert methods to promote real estate, interior and exterior design, service people and trusted resources.  When you hire Sarah you get access to her valuable network whether you need an electrician, solar, gardening or any type of service and repair.
-            </p>
-          </div>
-        </div>
+            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-amber-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex-1">
+                <Network className="w-8 h-8 text-primary mb-6" />
+                <h3 className="text-2xl font-serif font-light text-foreground mb-2">Valuable Network</h3>
+                <p className="text-sm text-primary font-medium mb-4">Trusted Resources on Speed Dial</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  All of Sarah's friends ask her for advice pertaining to the most expert methods to promote real estate, interior and exterior design, service people and trusted resources.  When you hire Sarah you get access to her valuable network whether you need an electrician, solar, gardening or any type of service and repair.
+                </p>
+              </div>
+            </div>
 
-        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
-          <div className="absolute -top-12 -right-12 w-40 h-40 bg-green-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-          <div className="relative z-10 flex-1">
-            <Home className="w-8 h-8 text-primary mb-6" />
-            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Mortgage Assistance</h3>
-            <p className="text-sm text-primary font-medium mb-4">Financing Guidance & Support</p>
-            <p className="text-muted-foreground leading-relaxed">
-          Our team helps you navigate the mortgage process and find the best financing options for your unique situation.
-            </p>
-          </div>
-        </div>
+            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-green-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex-1">
+                <Home className="w-8 h-8 text-primary mb-6" />
+                <h3 className="text-2xl font-serif font-light text-foreground mb-2">Mortgage Assistance</h3>
+                <p className="text-sm text-primary font-medium mb-4">Financing Guidance & Support</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our team helps you navigate the mortgage process and find the best financing options for your unique situation.
+                </p>
+              </div>
+            </div>
 
-        <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
-          <div className="absolute -top-12 -right-12 w-40 h-40 bg-sky-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
-          <div className="relative z-10 flex-1">
-            <Network className="w-8 h-8 text-primary mb-6" />
-            <h3 className="text-2xl font-serif font-light text-foreground mb-2">Pacific Palisades</h3>
-            <p className="text-sm text-primary font-medium mb-4">Local Experience & Leadership</p>
-            <p className="text-muted-foreground leading-relaxed">
-          As a longtime Palisades resident who rebuilt after losing her own home to a fire, Sarah brings firsthand insight into recovery, insurance, and rebuilding. Outside agents sometimes act like they know the area — Sarah's lived experience and service as former Chair of the Pacific Palisades Residents Association let her advise clients with authority and empathy.
-            </p>
-          </div>
-        </div>
+            <div className="bg-background p-10 md:p-12 rounded-xl border border-border relative overflow-hidden group hover:border-primary/20 transition-all h-full flex flex-col min-h-[20rem]">
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-sky-50 rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
+              <div className="relative z-10 flex-1">
+                <Network className="w-8 h-8 text-primary mb-6" />
+                <h3 className="text-2xl font-serif font-light text-foreground mb-2">Pacific Palisades</h3>
+                <p className="text-sm text-primary font-medium mb-4">Local Experience & Leadership</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  As a longtime Palisades resident who rebuilt after losing her own home to a fire, Sarah brings firsthand insight into recovery, insurance, and rebuilding. Outside agents sometimes act like they know the area — Sarah's lived experience and service as former Chair of the Pacific Palisades Residents Association let her advise clients with authority and empathy.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

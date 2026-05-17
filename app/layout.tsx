@@ -31,11 +31,27 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://asksarahconner.com"),
   title: "Sarah Conner | Luxury Real Estate | Malibu & Los Angeles",
   description:
-    "Trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, & LA. Strategic guidance & personalized service from The Agency.",
+    "Trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, & the Coachella Valley. Strategic guidance & personalized service from The Agency.",
   alternates: {
     canonical: "/",
   },
-     verification: {
+  openGraph: {
+    title: "Sarah Conner | Luxury Real Estate",
+    description: "Trusted luxury real estate advisor serving Malibu, Pacific Palisades, Beverly Hills, & the Coachella Valley. Strategic guidance from The Agency.",
+    url: "https://asksarahconner.com",
+    siteName: "Ask Sarah Conner",
+    images: [
+      {
+        url: "/Sarah-Conner.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Sarah Conner - Luxury Real Estate Agent",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };

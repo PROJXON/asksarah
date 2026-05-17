@@ -16,9 +16,11 @@ export default function SchemaMarkup() {
         "email": "sarah@asksarahconner.com",
         "sameAs": [
           "https://www.instagram.com/asksarahconner/",
-          "https://www.facebook.com/sarahbethconner/",
           "https://www.linkedin.com/in/sarah-beth-rena-conner-22776620/",
-          "https://www.theagencyre.com/agent/sarah-conner"
+          "https://www.theagencyre.com/agent/sarah-conner",
+          "https://www2.dre.ca.gov/PublicASP/pplinfo.asp?Lic_id=02272182",
+          "https://www.homes.com/real-estate-agents/sarah-conner/pxnsw6r/",
+          "https://www.realtor.com/realestateagents/690b80773c3ad73471a3c74c"
         ],
         "employee": [
           {

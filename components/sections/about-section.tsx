@@ -14,14 +14,10 @@ export default function AboutSection() {
             </p>
             <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
               <p>
-                With a track record of over $1 billion in successfully closed
-                transactions, AskSarahConner.com redefines the art of real
-                estate. Specializing in high-end properties that captivate and
-                inspire, we provide an unparalleled experience for those seeking
-                extraordinary homes and investment opportunities. Our portfolio
-                spans the {"world\u2019s"} most prestigious locations, offering
-                a curated selection of residences that embody sophistication,
-                craftsmanship, and timeless beauty.
+                Sarah Conner is a luxury real estate agent at The Agency (DRE #02272182), operating in Beverly Hills, Malibu, and the Coachella Valley. With a track record of over $1 billion in successfully closed transactions alongside her partner Pate Stevens, Sarah specializes in high-end residential properties and investment acquisitions.
+              </p>
+              <p>
+                The AskSarahConner team redefines the art of real estate by providing an unparalleled experience for those seeking extraordinary homes. Our portfolio spans Southern California's most prestigious locations, offering a curated selection of residences that embody sophistication, craftsmanship, and timeless beauty.
               </p>
               <p>
                 With a deep understanding of the luxury market, our team
@@ -105,9 +101,9 @@ export default function AboutSection() {
                   "We also have a wide range of allied partners who can be tapped when specialized expertise is needed, such as for real estate law, taxes, banking, design and construction. Whether it\u2019s for a personal residence or an investment property, rest assured we have the answers you\u2019re looking for."
                 }
               </p>
-            <h3 className="text-3xl md:text-3xl font-serif font-normal leading-tight tracking-tight text-foreground text-center">
+              <h3 className="text-3xl md:text-3xl font-serif font-normal leading-tight tracking-tight text-foreground text-center">
                 From Malibu’s Coastal Charm to the Serenity of the Desert
-            </h3>
+              </h3>
               <p className="">
                 Buyers and sellers count on our proven expertise that spans from the stunning cliffs and golden sands of Malibu to the tranquil vastness of the desert.
               </p>
@@ -124,24 +120,48 @@ export default function AboutSection() {
             </div>
             <div className="mt-12 grid lg:grid-cols-2 gap-8 items-center">
               <div className="aspect-[4/3] overflow-hidden rounded-lg">
-              <Image
-                src="/Interior.webp"
-                alt="Interior Design"
-                width={800}
-                height={600}
-                className="w-full h-full object-cover"
-              />
+                <Image
+                  src="/Interior.webp"
+                  alt="Interior Design"
+                  width={800}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
-              <h3 className="text-2xl font-serif text-foreground">Gain Higher Values With Updated Design</h3>
-              <p>
-                With our design expertise we help achieve the highest value when selling. The AskSarahConner design team can also assist clients with design and renovations before the sale or after you purchase.
-              </p>
-              <p className="font-medium">
+                <h3 className="text-2xl font-serif text-foreground">Gain Higher Values With Updated Design</h3>
+                <p>
+                  With our design expertise we help achieve the highest value when selling. The AskSarahConner design team can also assist clients with design and renovations before the sale or after you purchase.
+                </p>
+                <p className="font-medium">
                 Ask us about interior and exterior design possibilities if you are selling or buying a home!
               </p>
               </div>
             </div>
+
+            {/* AEO FAQ Section - Relocated to the bottom */}
+            <div className="mt-32 pt-16 border-t border-border">
+              <h2 className="text-3xl md:text-4xl font-serif font-normal leading-tight tracking-tight text-foreground text-center mb-12">
+                Frequently Asked Questions
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-12 text-left max-w-5xl mx-auto">
+                <div className="bg-background p-8 rounded-xl border border-border">
+                  <h4 className="font-serif text-xl text-foreground">What areas does Sarah Conner serve?</h4>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">
+                    Sarah Conner facilitates luxury real estate transactions across Southern California, specifically from the coastal neighborhoods of Malibu, Beverly Hills, and Pacific Palisades, out to the desert communities of Palm Springs, Palm Desert, and Rancho Mirage.
+                  </p>
+                </div>
+
+                <div className="bg-background p-8 rounded-xl border border-border">
+                  <h4 className="font-serif text-xl text-foreground">Does Sarah Conner offer interior design services?</h4>
+                  <p className="mt-4 text-muted-foreground leading-relaxed">
+                    Yes. The AskSarahConner team includes an in-house design and renovation advisory service to assist clients with strategic pre-listing renovations or post-purchase interior design.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
