@@ -65,7 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${lato.variable} ${playfair.variable}`}>
-      <head>
+      <body>
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -76,18 +76,13 @@ export default function RootLayout({
             })(window,document,'script','dataLayer','GTM-5TC7JHK8');
           `}
         </Script>
-        {/* End Google Tag Manager */}
-      </head>
-      <body>
+
         {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5TC7JHK8"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5TC7JHK8" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+          }}
+        />
         {/* End Google Tag Manager (noscript) */}
         
         <Header />
