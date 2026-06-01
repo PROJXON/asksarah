@@ -176,7 +176,9 @@ export default function WhySarahPage() {
                 </div>
                 <div className="mt-8 space-y-5 text-primary-foreground/80 text-lg leading-relaxed">
                   <p>
-                    Sarah Conner and Pate Stevens are partnered Real Estate Advisors at The Agency. They collaborate seamlessly on every transaction, bringing together a combined expertise that has resulted in over one billion dollars in closed real estate sales.
+                    Pate and Sarah partner on each transaction, working
+                    seamlessly together. They have closed over one billion
+                    dollars in real estate transactions.
                   </p>
                   <p>
                     Their combined expertise spans from Malibu to the desert,

@@ -14,10 +14,14 @@ export default function AboutSection() {
             </p>
             <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
               <p>
-                Sarah Conner is a luxury real estate agent at The Agency (DRE #02272182), operating in Beverly Hills, Malibu, and the Coachella Valley. With a track record of over $1 billion in successfully closed transactions alongside her partner Pate Stevens, Sarah specializes in high-end residential properties and investment acquisitions.
-              </p>
-              <p>
-                The AskSarahConner team redefines the art of real estate by providing an unparalleled experience for those seeking extraordinary homes. Our portfolio spans Southern California's most prestigious locations, offering a curated selection of residences that embody sophistication, craftsmanship, and timeless beauty.
+                With a track record of over $1 billion in successfully closed
+                transactions, AskSarahConner.com redefines the art of real
+                estate. Specializing in high-end properties that captivate and
+                inspire, we provide an unparalleled experience for those seeking
+                extraordinary homes and investment opportunities. Our portfolio
+                spans the {"world\u2019s"} most prestigious locations, offering
+                a curated selection of residences that embody sophistication,
+                craftsmanship, and timeless beauty.
               </p>
               <p>
                 With a deep understanding of the luxury market, our team
