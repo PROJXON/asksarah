@@ -44,10 +44,10 @@ export const metadata: Metadata = {
     siteName: "Ask Sarah Conner",
     images: [
       {
-        url: "/Sarah-Conner.webp", 
+        url: "/Thumbnail.webp", 
         width: 1200,
         height: 630,
-        alt: "Sarah Conner - Luxury Real Estate Agent",
+        alt: "Sarah Conner - Real Estate Agent",
       },
     ],
     locale: "en_US",
