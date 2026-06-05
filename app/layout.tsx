@@ -1,7 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { Montserrat, Lato, Playfair_Display } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/sections/site-header";
 import { Footer } from "@/components/sections/site-footer";
 import SchemaMarkup from "@/components/sections/schema-markup";
@@ -91,7 +90,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        <Analytics />
         <SchemaMarkup />
       </body>
     </html>
