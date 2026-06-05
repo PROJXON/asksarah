@@ -2,7 +2,6 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Montserrat, Lato, Playfair_Display } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import Script from "next/script";
 import Header from "@/components/sections/site-header";
 import { Footer } from "@/components/sections/site-footer";
 import SchemaMarkup from "@/components/sections/schema-markup";
@@ -65,18 +64,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${lato.variable} ${playfair.variable}`}>
-      <body>
+      <head>
         {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-5TC7JHK8');
-          `}
-        </Script>
-
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-5TC7JHK8');
+            `,
+          }}
+        />
+        {/* End Google Tag Manager */}
+      </head>
+      <body>
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -84,7 +87,7 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        
+
         <Header />
         {children}
         <Footer />
