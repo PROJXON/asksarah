@@ -36,7 +36,17 @@ export async function POST(request: Request) {
       );
     }
 
-    const { name, email, phone, interest, message } = await request.json();
+    // Extract all fields, including the new 'website' honeypot field
+    const { name, email, phone, interest, message, website } = await request.json();
+
+    // --- HONEYPOT CHECK ---
+    // If a bot filled out the hidden website field, silently discard the submission.
+    if (website && website.trim() !== "") {
+      console.log(`Bot blocked via honeypot from IP: ${ip}`);
+      // Return ok: true so the bot thinks it succeeded and moves on
+      return NextResponse.json({ ok: true }); 
+    }
+    // ----------------------
 
     if (!email || !phone || !message) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
