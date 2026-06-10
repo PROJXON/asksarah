@@ -11,6 +11,7 @@ export default function ContactForm() {
     phone: "",
     interest: "",
     message: "",
+    website: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -20,23 +21,21 @@ export default function ContactForm() {
 
     const payload = { ...formData };
 
-  const res = await fetch("/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
 
-  const data = await res.json();
+    const data = await res.json();
 
-  if (!res.ok) {
-    alert(data?.error || "Something went wrong");
-    return;
-  }
-  
-  setSubmitted(true);
-  // alert("Sent!");
-};
-
+    if (!res.ok) {
+      alert(data?.error || "Something went wrong");
+      return;
+    }
+    
+    setSubmitted(true);
+  };
 
   return (
     <div className="bg-secondary/30 p-8 md:p-10 rounded-lg">
@@ -57,6 +56,24 @@ export default function ContactForm() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-5">
+          
+          {/* --- HONEYPOT FIELD --- */}
+          <div className="absolute opacity-0 -z-10" aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.website}
+              onChange={(e) =>
+                setFormData({ ...formData, website: e.target.value })
+              }
+            />
+          </div>
+          {/* ---------------------- */}
+
           <div className="grid md:grid-cols-2 gap-5">
             <div>
               <input
